@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" width="520" height="160">
+  <defs>
+    <linearGradient id="pagesGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#fbbf24"/>
+      <stop offset="50%"  stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon box: glow/fill transparent, amber border -->
+  <rect x="16" y="16" width="48" height="48" rx="8" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-opacity="0.5" stroke-width="1.5"/>
+
+  <!-- Geometric prism icon (same paths as Logo.tsx) -->
+  <g transform="translate(40,40)" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M0,-9 L10,0 L0,9 L-10,0 Z"/>
+    <line x1="0" y1="-9" x2="0" y2="9"/>
+    <line x1="0" y1="0" x2="8" y2="-1.5" stroke-opacity="0.5"/>
+    <line x1="-8" y1="1.5" x2="0" y2="0" stroke-opacity="0.5"/>
+  </g>
+
+  <!-- LUMEN wordmark — dark charcoal para fundos claros -->
+  <text
+    x="78" y="50"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-weight="900"
+    font-size="30"
+    letter-spacing="-1"
+    fill="#1a1d26"
+  >LUMEN</text>
+
+  <!-- PAGES wordmark — amber gradient -->
+  <text
+    x="79.5" y="63"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-weight="700"
+    font-size="10"
+    letter-spacing="3"
+    fill="url(#pagesGradient)"
+  >PAGES</text>
+</svg>

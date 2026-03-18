@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" width="520" height="160">
+  <defs>
+    <!-- Amber gradient for the icon border glow -->
+    <linearGradient id="iconGlow" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fde047" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#f59e0b" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ca8a04" stop-opacity="0.25"/>
+    </linearGradient>
+    <!-- Amber gradient for PAGES text -->
+    <linearGradient id="pagesGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#fbbf24"/>
+      <stop offset="50%"  stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <!-- Dark background for the icon box -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark background (full canvas) -->
+  <rect width="260" height="80" rx="12" fill="#111318"/>
+
+  <!-- Icon box: glow layer -->
+  <rect x="16" y="16" width="48" height="48" rx="8" fill="url(#iconGlow)"/>
+  <!-- Icon box: main border -->
+  <rect x="16" y="16" width="48" height="48" rx="8" fill="#111318" fill-opacity="0.6" stroke="#f59e0b" stroke-opacity="0.5" stroke-width="1.5"/>
+
+  <!-- Geometric prism / lumen icon — faithfully from Logo.tsx paths -->
+  <!-- Main diamond outline -->
+  <g transform="translate(40,40)" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Path: M12 3l10 9-10 9-10-9 z  → centered at 0,0 → shift by -12,-12 -->
+    <path d="M0,-9 L10,0 L0,9 L-10,0 Z"/>
+    <!-- Vertical line: M12 3v18 → vertical through center -->
+    <line x1="0" y1="-9" x2="0" y2="9"/>
+    <!-- Horizontal accent right: M12 12l8.5-1.5 → short line to right -->
+    <line x1="0" y1="0" x2="8" y2="-1.5" stroke-opacity="0.5"/>
+    <!-- Horizontal accent left: M3.5 10.5L12 12 → short line to left -->
+    <line x1="-8" y1="1.5" x2="0" y2="0" stroke-opacity="0.5"/>
+  </g>
+
+  <!-- LUMEN wordmark -->
+  <text
+    x="78" y="50"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-weight="900"
+    font-size="30"
+    letter-spacing="-1"
+    fill="#f2f2f5"
+  >LUMEN</text>
+
+  <!-- PAGES wordmark -->
+  <text
+    x="79.5" y="63"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-weight="700"
+    font-size="10"
+    letter-spacing="3"
+    fill="url(#pagesGradient)"
+  >PAGES</text>
+</svg>
