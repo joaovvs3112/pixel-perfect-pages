@@ -1,6 +1,16 @@
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { WordReveal } from "@/components/quiz/WordReveal";
+
+/**
+ * CTASection — CTA final com efeito portal.
+ *
+ * Efeitos aplicados:
+ *   1. WordReveal na headline principal — "Pronto para converter mais?"
+ *   2. Anéis com scale-in no scroll
+ *   3. Partículas animadas com ping
+ */
 
 const CTASection = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -12,22 +22,16 @@ const CTASection = () => {
       className="relative py-24 px-4 overflow-hidden flex items-center justify-center min-h-[80vh]"
       style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)' }}
     >
-      {/* Portal Container */}
       <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center">
 
-        {/* The Portal Effect Elements */}
+        {/* Portal rings */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          {/* Outer Glow Ring */}
           <div className={`w-[600px] h-[600px] rounded-full border border-amber-500/10 bg-gradient-to-b from-amber-500/5 to-transparent backdrop-blur-[2px] transition-all duration-1000 ${isVisible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`} />
-
-          {/* Inner Suction Ring */}
           <div className={`absolute w-[400px] h-[400px] rounded-full border border-amber-500/20 shadow-[0_0_100px_rgba(245,158,11,0.1)] transition-all duration-1000 delay-100 ${isVisible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`} />
-
-          {/* Core */}
           <div className={`absolute w-[200px] h-[200px] bg-amber-500/10 rounded-full blur-[50px] animate-pulse`} />
         </div>
 
-        {/* Floating Particles (CSS Animation simulating suction) */}
+        {/* Floating particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(6)].map((_, i) => (
             <div
@@ -42,13 +46,32 @@ const CTASection = () => {
           ))}
         </div>
 
-        {/* Content Inside Portal */}
+        {/* Content */}
         <div className="relative z-20 space-y-8">
           <h2 className={`text-4xl md:text-6xl font-bold tracking-tighter text-foreground mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            Pronto para <br />
-            <span className="bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 bg-clip-text text-transparent drop-shadow-sm">
-              converter mais?
-            </span>
+            {isVisible ? (
+              <>
+                <WordReveal
+                  text="Pronto para"
+                  stagger={90}
+                  baseDelay={200}
+                />
+                <br />
+                <span className="bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 bg-clip-text text-transparent drop-shadow-sm">
+                  <WordReveal
+                    text="converter mais?"
+                    stagger={90}
+                    baseDelay={500}
+                  />
+                </span>
+              </>
+            ) : (
+              <>
+                <span className="opacity-0">Pronto para</span>
+                <br />
+                <span className="opacity-0">converter mais?</span>
+              </>
+            )}
           </h2>
 
           <p className={`text-xl text-muted-foreground max-w-lg mx-auto transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -79,7 +102,6 @@ const CTASection = () => {
             </p>
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -13,11 +13,13 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import MainFloatingElements from "@/components/MainFloatingElements";
 
 const Index = () => {
   return (
     <main className="min-h-screen relative overflow-hidden flex flex-col">
       <ReactiveBackground />
+      <MainFloatingElements />
       <Header />
       <HeroSection />
       <ProblemSection />

@@ -1,7 +1,17 @@
 import { Check, Plus, MessageCircle, Zap, Star, BarChart2 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Button } from "@/components/ui/button";
+import { ScrollCounter } from "@/components/ui/ScrollCounter";
 import React from "react";
+
+/**
+ * IncludedSection — o que o pacote inclui + preço.
+ *
+ * Efeitos aplicados:
+ *   1. ScrollCounter nos badges de stats ("7", "100", "30")
+ *   2. Coluna esquerda entra da esquerda, direita entra da direita (já existia, mantido)
+ *   3. Items da lista com entrada stagger suave
+ */
 
 const IncludedSection = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -65,8 +75,7 @@ const IncludedSection = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div
-          className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           <p className="text-accent font-medium mb-2">O que você leva</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -81,7 +90,7 @@ const IncludedSection = () => {
 
         {/* Main grid */}
         <div className="grid lg:grid-cols-2 gap-10 items-start">
-          {/* LEFT — Benefits + Included */}
+          {/* LEFT — entra da esquerda */}
           <div
             className={`transition-all duration-700 delay-100 ${isVisible
               ? "opacity-100 translate-x-0"
@@ -117,7 +126,6 @@ const IncludedSection = () => {
               </ul>
             </div>
 
-            {/* Divider */}
             <div className="h-px bg-border/40 my-8" />
 
             {/* Included */}
@@ -150,7 +158,7 @@ const IncludedSection = () => {
             </div>
           </div>
 
-          {/* RIGHT — Optionals + CTA */}
+          {/* RIGHT — entra da direita */}
           <div
             className={`transition-all duration-700 delay-300 ${isVisible
               ? "opacity-100 translate-x-0"
@@ -158,7 +166,6 @@ const IncludedSection = () => {
               }`}
           >
             <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-border/10 p-8 hover:border-accent/20 transition-all duration-300">
-              {/* Optionals header */}
               <div className="flex items-center gap-2 mb-6">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                 <h3 className="text-amber-400 font-semibold uppercase tracking-widest text-xs">
@@ -202,7 +209,7 @@ const IncludedSection = () => {
                 Valores disponíveis mediante consulta via WhatsApp.
               </p>
 
-              {/* Preço — ancora após apresentar todo o valor */}
+              {/* Preço */}
               <div className="text-center mb-5">
                 <p className="text-xs text-muted-foreground/50 uppercase tracking-widest mb-1">Investimento</p>
                 <div className="flex items-baseline justify-center gap-1.5">
@@ -229,7 +236,7 @@ const IncludedSection = () => {
               </div>
             </div>
 
-            {/* Stats badges */}
+            {/* Stats badges com counters animados */}
             <div
               className={`flex gap-3 mt-4 transition-all duration-700 delay-700 ${isVisible
                 ? "opacity-100 translate-y-0"
@@ -237,15 +244,22 @@ const IncludedSection = () => {
                 }`}
             >
               {[
-                { value: "7 dias", label: "Prazo máximo" },
-                { value: "100%", label: "Responsivo" },
-                { value: "30 dias", label: "Suporte pós-entrega" },
+                { target: 7,   suffix: " dias", label: "Prazo máximo" },
+                { target: 100, suffix: "%",      label: "Responsivo" },
+                { target: 30,  suffix: " dias",  label: "Suporte pós-entrega" },
               ].map((badge, i) => (
                 <div
                   key={i}
                   className="flex-1 text-center p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-border/10 hover:border-accent/30 transition-all duration-300"
                 >
-                  <p className="text-accent font-bold text-lg">{badge.value}</p>
+                  <p className="text-accent font-bold text-lg">
+                    <ScrollCounter
+                      target={badge.target}
+                      suffix={badge.suffix}
+                      delay={i * 200 + 600}
+                      duration={1200}
+                    />
+                  </p>
                   <p className="text-xs text-muted-foreground">{badge.label}</p>
                 </div>
               ))}

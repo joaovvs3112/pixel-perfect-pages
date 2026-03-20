@@ -186,7 +186,15 @@
     opacity: 1;
     transform: translateY(0);
   }
-}/* ─── Quiz Animations ─────────────────────────────────────────────────────── */
+}
+
+/* ─── Main Page Float Animation (parallax decorative elements) ──────────── */
+@keyframes mainFloat {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-18px); }
+}
+
+/* ─── Quiz Animations ─────────────────────────────────────────────────────── */
 
 @keyframes wordFadeIn {
   from { opacity: 0; transform: translateY(8px); }
