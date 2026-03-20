@@ -50,27 +50,14 @@ const CTASection = () => {
         <div className="relative z-20 space-y-8">
           <h2 className={`text-4xl md:text-6xl font-bold tracking-tighter text-foreground mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {isVisible ? (
-              <>
-                <WordReveal
-                  text="Pronto para"
-                  stagger={90}
-                  baseDelay={200}
-                />
-                <br />
-                <span className="bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-600 bg-clip-text text-transparent drop-shadow-sm">
-                  <WordReveal
-                    text="converter mais?"
-                    stagger={90}
-                    baseDelay={500}
-                  />
-                </span>
-              </>
+              <WordReveal
+                text="Pronto para converter mais?"
+                highlight={["converter", "mais?"]}
+                stagger={90}
+                baseDelay={200}
+              />
             ) : (
-              <>
-                <span className="opacity-0">Pronto para</span>
-                <br />
-                <span className="opacity-0">converter mais?</span>
-              </>
+              <span className="opacity-0">Pronto para converter mais?</span>
             )}
           </h2>
 
@@ -98,7 +85,7 @@ const CTASection = () => {
               <span className="text-accent text-xs font-medium">Poucas vagas disponíveis este mês</span>
             </div>
             <p className="text-sm text-muted-foreground/50">
-              Sem contrato • Entrega em até 7 dias • 30 dias de suporte
+              Entrega em até 7 dias úteis • 30 dias de suporte
             </p>
           </div>
         </div>
