@@ -37,5 +37,20 @@
 
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!--
+      Formulários ocultos para detecção pelo Netlify Forms durante o build.
+      O Netlify escaneia o HTML estático para registrar os formulários;
+      a submissão real é feita via fetch (application/x-www-form-urlencoded)
+      dentro do React. Não remova esses formulários.
+    -->
+    <form name="quiz-leads" netlify data-netlify="true" hidden>
+      <input type="text"   name="nome" />
+      <input type="email"  name="email" />
+      <input type="tel"    name="whatsapp" />
+      <input type="text"   name="perfil" />
+      <textarea            name="respostas"></textarea>
+      <input type="text"   name="data_hora" />
+    </form>
   </body>
 </html>
