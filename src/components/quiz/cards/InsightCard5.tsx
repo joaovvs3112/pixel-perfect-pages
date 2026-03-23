@@ -1,7 +1,12 @@
 /**
  * Insight Card 5 — After Q7 (Dependência de indicação)
- * Theme: The fragility of referral-only businesses
- * Visual: Animated donut chart + risk analysis
+ * 4 variants based on q7Answer:
+ *   0 = ~100% indicação  → Crescimento nas mãos de outros
+ *   1 = 70–80% indicação → Dois canais, um carrega tudo
+ *   2 = ~50%/50%         → Parece bom, mas metade é imprevisível
+ *   3 = <30% indicação   → Você já dominou o digital — próximo: conversão
+ *
+ * O gráfico (donut + barras) adapta automaticamente ao percentual.
  */
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { AnimatedCounter } from "../AnimatedCounter";
@@ -13,29 +18,74 @@ function getDependency(q7: number | undefined) {
   return map[q7 ?? 0];
 }
 
+function getContent(q7: number) {
+  switch (q7) {
+    case 0:
+      return {
+        title: "Quando 9 em 10 clientes vêm por indicação, seu crescimento está nas mãos de outras pessoas.",
+        body: "Indicação é o melhor canal que existe — mas não dá para programar, não escala sozinha e não é previsível. Um mês sem uma boa indicação pode impactar diretamente o seu faturamento.",
+        closing: "Uma landing page não substitui a indicação. Ela trabalha em paralelo — 24 horas por dia, sem precisar de você.",
+      };
+    case 1:
+      return {
+        title: "Você tem dois canais. Mas um carrega quase todo o peso.",
+        body: "Ter algum resultado digital é um bom sinal — mas com 70–80% vindo de indicações, você ainda está muito exposto. Se esse fluxo cair, a queda no faturamento é imediata.",
+        closing: "Equilibrar os canais não é abandonar a indicação. É garantir que o digital funcione mesmo quando as indicações estão quietas.",
+      };
+    case 2:
+      return {
+        title: "50/50 parece bom. Mas significa que metade do seu crescimento ainda é imprevisível.",
+        body: "Chegar ao equilíbrio entre indicação e digital é um marco importante. O próximo passo não é aumentar tráfego — é converter melhor o que já chega pelo digital.",
+        closing: "Com uma LP bem estruturada, o digital pode ultrapassar a indicação sem precisar gastar mais em anúncios.",
+      };
+    case 3:
+      return {
+        title: "Você já dominou o digital. O próximo nível é conversão.",
+        body: "Menos de 30% de dependência de indicações significa que você já tem um canal digital funcionando. O gargalo agora não é tráfego — é transformar mais visitantes em contatos e mais contatos em clientes.",
+        closing: "Uma LP otimizada para conversão pode dobrar seus resultados sem aumentar um centavo no investimento em tráfego.",
+      };
+    default:
+      return {
+        title: "Indicação é o melhor marketing que existe. Também é o mais frágil.",
+        body: "Um negócio que depende fortemente de indicações está terceirizando seu crescimento para outros. Quando o fluxo diminui — e em algum momento sempre diminui — o impacto aparece direto no faturamento.",
+        closing: "Uma landing page não substitui a indicação. Ela trabalha em paralelo — 24 horas por dia, sem precisar de você.",
+      };
+  }
+}
+
 export function InsightCard5({ onNext, animDir, q7Answer }: Props) {
-  const pct = getDependency(q7Answer);
+  const q7 = q7Answer ?? 0;
+  const pct = getDependency(q7);
   const digital = 100 - pct;
+  const { title, body, closing } = getContent(q7);
 
   const pieData = [
-    { name: "Indicação", value: pct, color: "#4A5568" },
-    { name: "Digital", value: digital, color: "#F59E0B" },
+    { name: "Indicação", value: pct,     color: "#4A5568" },
+    { name: "Digital",   value: digital, color: "#F59E0B" },
   ];
+
+  const riskItems = q7 === 3
+    ? [
+        { icon: "📈", text: "Canal digital já funciona" },
+        { icon: "🎯", text: "Foco em conversão agora" },
+        { icon: "🔁", text: "Escala sem mais gasto" },
+      ]
+    : [
+        { icon: "📅", text: "Não dá para programar crescimento" },
+        { icon: "📉", text: "Não escala sozinha" },
+        { icon: "🔮", text: "Não é previsível" },
+      ];
 
   return (
     <div className={`quiz-card ${animDir} max-w-2xl mx-auto`}>
       <div className="insight-badge">ANÁLISE DE RISCO</div>
 
       <h2 className="text-2xl md:text-3xl font-bold text-white mt-4 mb-2 leading-snug">
-        Indicação é o melhor marketing que existe.
-        <br />
-        <span className="text-amber-400">Também é o mais frágil.</span>
+        {title}
       </h2>
 
       <p className="text-[#8B9ABB] mb-6 leading-relaxed">
-        Um negócio que depende fortemente de indicações está terceirizando seu
-        crescimento para outros. Quando o fluxo de indicações diminui — e em
-        algum momento sempre diminui — o impacto aparece direto no faturamento.
+        {body}
       </p>
 
       {/* Chart + stats */}
@@ -81,7 +131,7 @@ export function InsightCard5({ onNext, animDir, q7Answer }: Props) {
               <div className="h-2 bg-[#1E2433] rounded-full overflow-hidden">
                 <div
                   className="h-full bg-[#4A5568] rounded-full"
-                  style={{ animation: `barGrow 1s 0.6s ease both`, width: `${pct}%`, transformOrigin: "left" }}
+                  style={{ animation: "barGrow 1s 0.6s ease both", width: `${pct}%`, transformOrigin: "left" }}
                 />
               </div>
             </div>
@@ -96,20 +146,16 @@ export function InsightCard5({ onNext, animDir, q7Answer }: Props) {
               <div className="h-2 bg-[#1E2433] rounded-full overflow-hidden">
                 <div
                   className="h-full bg-amber-400 rounded-full"
-                  style={{ animation: `barGrow 1s 0.8s ease both`, width: `${digital}%`, transformOrigin: "left" }}
+                  style={{ animation: "barGrow 1s 0.8s ease both", width: `${digital}%`, transformOrigin: "left" }}
                 />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Insight row */}
+        {/* Risk row */}
         <div className="grid grid-cols-3 gap-3 mt-5 border-t border-[#1E2433] pt-4">
-          {[
-            { icon: "📅", text: "Não dá para programar crescimento" },
-            { icon: "📉", text: "Não escala sozinha" },
-            { icon: "🔮", text: "Não é previsível" },
-          ].map((item, i) => (
+          {riskItems.map((item, i) => (
             <div
               key={i}
               className="text-center"
@@ -123,8 +169,11 @@ export function InsightCard5({ onNext, animDir, q7Answer }: Props) {
       </div>
 
       <p className="text-[#8B9ABB] text-sm italic mb-8">
-        Uma landing page não substitui a indicação.{" "}
-        <strong className="text-white">Ela trabalha em paralelo — 24 horas por dia, sem precisar de você.</strong>
+        {closing.split(" — ").map((part, i, arr) => (
+          i < arr.length - 1
+            ? <span key={i}>{part} — </span>
+            : <strong key={i} className="text-white">{part}</strong>
+        ))}
       </p>
 
       <button onClick={onNext} className="quiz-insight-btn">

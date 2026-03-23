@@ -82,7 +82,12 @@ export default function Quiz() {
             );
           case 2:
             return (
-              <InsightCard2 key={currentStep} onNext={actions.goNext} animDir={dir} />
+              <InsightCard2
+                key={currentStep}
+                onNext={actions.goNext}
+                animDir={dir}
+                q2Answer={answers["q2"]}
+              />
             );
           case 3:
             return (
@@ -91,7 +96,7 @@ export default function Quiz() {
                 onNext={actions.goNext}
                 animDir={dir}
                 q4Answer={answers["q4"]}
-                q6Answer={answers["q6"]}
+                onSelectTicket={(idx) => actions.selectAnswer("q6", idx)}
               />
             );
           case 4:
