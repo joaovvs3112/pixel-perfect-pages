@@ -54,14 +54,14 @@ export function SocialProofCard({ onNext, animDir }: Props) {
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse mt-1 shrink-0" />
           <div>
             <span className="text-green-400 text-sm font-medium">Acima de 20% de conversão no botão de CTA</span>
-            <p className="text-[#4A5568] text-xs mt-0.5">
+            <p className="text-[#6B7A99] text-xs mt-0.5">
               Enquanto o restante do segmento briga para chegar a 10% — num dos mercados mais competitivos do país.
             </p>
           </div>
         </div>
 
         {/* Delivery note */}
-        <p className="text-[#4A5568] text-xs mt-3">
+        <p className="text-[#6B7A99] text-xs mt-3">
           Página entregue em 7 dias úteis. Do briefing ao ar.
         </p>
       </div>
@@ -77,7 +77,7 @@ export function SocialProofCard({ onNext, animDir }: Props) {
         <p className="text-sm text-[#8B9ABB] leading-relaxed">
           A maioria dos concorrentes do seu mercado ainda usa Instagram como única
           presença digital — ou tem um site desatualizado sem estratégia de conversão.
-          Com a Lumen Pages, você chega ao ar em 7 dias com uma página que já supera
+          Com a Lumen Pages, você chega ao ar em 7 dias úteis com uma página que já supera
           tecnicamente{" "}
           <strong className="text-white">90% do que existe no seu nicho.</strong>
         </p>

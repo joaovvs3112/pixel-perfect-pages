@@ -11,21 +11,21 @@ const stats = [
   { value: 40, prefix: "+", suffix: "", label: "páginas entregues" },
   { value: 12, prefix: "", suffix: "+", label: "segmentos atendidos" },
   { value: 3.2, prefix: "", suffix: "×", decimals: 1, label: "conversão vs Instagram" },
-  { value: 7, prefix: "", suffix: " dias", label: "prazo médio de entrega" },
+  { value: 7, prefix: "", suffix: " dias úteis", label: "prazo médio de entrega" },
 ];
 
 const differentiators = [
   {
-    title: "Foco em resultado, não em beleza",
-    desc: "Cada página é construída em torno de uma meta: leads, agendamentos ou vendas. Bonito-mas-não-converte não é entregável aqui.",
+    title: "Primeira impressão que gera desejo",
+    desc: "Um site visualmente atraente faz com que o lead sinta vontade de contratar antes mesmo de ler o preço. Quem se apresenta com profissionalismo vende mais caro — e o cliente não questiona, porque a experiência já justificou o valor.",
   },
   {
     title: "Copy estratégico proprietário",
-    desc: "Escrevemos o texto com base em frameworks de persuasão testados (PAS, AIDA, SPIN) aplicados ao nicho do cliente. Você não precisa escrever nada.",
+    desc: "Escrevemos o texto com base em frameworks de persuasão testados (PAS, AIDA, SPIN) aplicados ao nicho do cliente. Você não precisa escrever nada — só nos mostrar como funciona seu negócio. Daí pra frente, é com a gente.",
   },
   {
-    title: "Processo transparente em 4 etapas",
-    desc: "Briefing → Wireframe → Design → Publicação. Você sabe exatamente onde está o projeto a qualquer momento.",
+    title: "Processo transparente em 5 etapas",
+    desc: "Conversa → Briefing → Desenvolvimento → Revisão → Publicação. Você sabe exatamente onde está o projeto a qualquer momento.",
   },
 ];
 

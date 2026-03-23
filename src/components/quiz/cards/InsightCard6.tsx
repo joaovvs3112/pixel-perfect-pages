@@ -198,7 +198,7 @@ export function InsightCard6({ onNext, animDir, q9Answer }: Props) {
         className="bg-[#141720] border border-[#1E2433] rounded-2xl p-6 mb-6"
         style={{ animation: "fadeInUp 0.6s 0.3s ease both" }}
       >
-        <p className="text-xs text-[#4A5568] uppercase tracking-wider mb-4 text-center">
+        <p className="text-xs text-[#6B7A99] uppercase tracking-wider mb-4 text-center">
           O que uma LP faz enquanto você trabalha
         </p>
         <div className="space-y-3">

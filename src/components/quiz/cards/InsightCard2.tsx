@@ -13,7 +13,7 @@ import { WordReveal } from "../WordReveal";
 interface Props { onNext: () => void; animDir: string; q2Answer: number | undefined; }
 
 const chartData = [
-  { name: "Perfil\nInstagram", min: 0.5, max: 1.5, label: "0,5–1,5%", fill: "#4A5568" },
+  { name: "Perfil\nInstagram", min: 0.5, max: 1.5, label: "0,5–1,5%", fill: "#6B7A99" },
   { name: "Landing\nPage", min: 3, max: 8, label: "3–8%", fill: "#F59E0B" },
 ];
 
@@ -32,7 +32,7 @@ const ConversionChart = () => (
     className="bg-[#141720] border border-[#1E2433] rounded-2xl p-6 mb-6"
     style={{ animation: "fadeInUp 0.6s 0.3s ease both" }}
   >
-    <p className="text-xs text-[#4A5568] text-center mb-4 uppercase tracking-wider">
+    <p className="text-xs text-[#6B7A99] text-center mb-4 uppercase tracking-wider">
       Taxa de conversão média
     </p>
     <div style={{ height: 200 }}>
@@ -61,9 +61,9 @@ const ConversionChart = () => (
     </div>
     <div className="grid grid-cols-2 gap-4 mt-2 border-t border-[#1E2433] pt-4">
       <div className="text-center">
-        <p className="text-[#4A5568] text-xs mb-1">Por 1.000 visitantes</p>
-        <p className="text-2xl font-black text-[#4A5568]">5–15</p>
-        <p className="text-xs text-[#4A5568]">contatos via Instagram</p>
+        <p className="text-[#6B7A99] text-xs mb-1">Por 1.000 visitantes</p>
+        <p className="text-2xl font-black text-[#6B7A99]">5–15</p>
+        <p className="text-xs text-[#6B7A99]">contatos via Instagram</p>
       </div>
       <div className="text-center">
         <p className="text-amber-400/60 text-xs mb-1">Por 1.000 visitantes</p>
@@ -102,8 +102,8 @@ export function InsightCard2({ onNext, animDir, q2Answer }: Props) {
         >
           <div className="grid grid-cols-2 gap-6">
             <div>
-              <p className="text-xs text-[#4A5568] uppercase tracking-wider mb-3">Página comum</p>
-              <ul className="space-y-2 text-sm text-[#4A5568]">
+              <p className="text-xs text-[#6B7A99] uppercase tracking-wider mb-3">Página comum</p>
+              <ul className="space-y-2 text-sm text-[#6B7A99]">
                 {["Headline genérica", "Sem prova social", "CTA fraco ou ausente", "Sem hierarquia visual"].map(item => (
                   <li key={item} className="flex items-center gap-2">
                     <span className="text-red-400">✗</span> {item}
@@ -210,7 +210,7 @@ export function InsightCard2({ onNext, animDir, q2Answer }: Props) {
               <div key={row.label} className="grid grid-cols-[1fr_60px_60px] items-center gap-2">
                 <p className="text-sm text-[#8B9ABB]">{row.label}</p>
                 <div className="text-center">
-                  <span className={row.linktree ? "text-green-400" : "text-[#4A5568]"}>
+                  <span className={row.linktree ? "text-green-400" : "text-[#6B7A99]"}>
                     {row.linktree ? "✓" : "✗"}
                   </span>
                 </div>
@@ -220,8 +220,8 @@ export function InsightCard2({ onNext, animDir, q2Answer }: Props) {
               </div>
             ))}
             <div className="grid grid-cols-[1fr_60px_60px] items-center gap-2 pt-2 border-t border-[#1E2433]">
-              <p className="text-xs text-[#4A5568]"></p>
-              <p className="text-xs text-[#4A5568] text-center">Linktree</p>
+              <p className="text-xs text-[#6B7A99]"></p>
+              <p className="text-xs text-[#6B7A99] text-center">Linktree</p>
               <p className="text-xs text-amber-400/70 text-center">Landing Page</p>
             </div>
           </div>
@@ -266,7 +266,7 @@ export function InsightCard2({ onNext, animDir, q2Answer }: Props) {
         className="bg-[#141720] border border-[#1E2433] rounded-2xl p-6 mb-6"
         style={{ animation: "fadeInUp 0.6s 0.3s ease both" }}
       >
-        <p className="text-xs text-[#4A5568] text-center mb-4 uppercase tracking-wider">
+        <p className="text-xs text-[#6B7A99] text-center mb-4 uppercase tracking-wider">
           O que acontece sem uma página de destino
         </p>
         <div className="space-y-3">

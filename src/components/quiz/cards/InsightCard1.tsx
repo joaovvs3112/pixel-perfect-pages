@@ -60,11 +60,11 @@ export function InsightCard1({ onNext, animDir, q1Answer }: Props) {
               <span className="text-xs text-[#8B9ABB] w-28 shrink-0">Contactam direto</span>
               <div className="flex-1 h-3 bg-[#1E2433] rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-[#4A5568] rounded-full"
+                  className="h-full bg-[#6B7A99] rounded-full"
                   style={{ animation: "barGrow 1s 1.0s ease both", width: "13%", transformOrigin: "left" }}
                 />
               </div>
-              <span className="text-xs font-bold text-[#4A5568] w-10 text-right">13%</span>
+              <span className="text-xs font-bold text-[#6B7A99] w-10 text-right">13%</span>
             </div>
           </div>
         </div>
@@ -134,11 +134,11 @@ export function InsightCard1({ onNext, animDir, q1Answer }: Props) {
               <span className="text-xs text-[#8B9ABB] w-28 shrink-0">Contactam direto</span>
               <div className="flex-1 h-3 bg-[#1E2433] rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-[#4A5568] rounded-full"
+                  className="h-full bg-[#6B7A99] rounded-full"
                   style={{ animation: "barGrow 1s 1.0s ease both", width: "13%", transformOrigin: "left" }}
                 />
               </div>
-              <span className="text-xs font-bold text-[#4A5568] w-10 text-right">13%</span>
+              <span className="text-xs font-bold text-[#6B7A99] w-10 text-right">13%</span>
             </div>
           </div>
         </div>

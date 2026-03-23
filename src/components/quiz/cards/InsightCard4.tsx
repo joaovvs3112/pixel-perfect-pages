@@ -15,7 +15,7 @@ const funnelStages = [
   { label: "Usuário clica",           sublabel: "Ótimo sinal de interesse",            color: "#3B82F6", icon: "👆", width: "80%" },
   { label: "Página recebe o tráfego", sublabel: "Aqui está o problema",               color: "#EF4444", icon: "💥", width: "60%" },
   { label: "Visitante fica 4 segundos", sublabel: "Não encontra clareza",             color: "#EF4444", icon: "❓", width: "30%" },
-  { label: "Vai embora sem contatar", sublabel: "Você pagou. Ele saiu de graça.",      color: "#4A5568", icon: "🚪", width: "10%" },
+  { label: "Vai embora sem contatar", sublabel: "Você pagou. Ele saiu de graça.",      color: "#6B7A99", icon: "🚪", width: "10%" },
 ];
 
 function FunnelVisual() {
@@ -33,7 +33,7 @@ function FunnelVisual() {
       className="bg-[#141720] border border-[#1E2433] rounded-2xl p-6 mb-6"
       style={{ animation: "fadeInUp 0.5s 0.2s ease both" }}
     >
-      <p className="text-xs text-[#4A5568] uppercase tracking-wider mb-5 text-center">
+      <p className="text-xs text-[#6B7A99] uppercase tracking-wider mb-5 text-center">
         O que acontece depois do clique
       </p>
       <div className="space-y-2">
@@ -49,7 +49,7 @@ function FunnelVisual() {
             <div className="flex items-center gap-2 mb-1">
               <span className="text-lg">{stage.icon}</span>
               <span className="text-sm font-semibold text-white">{stage.label}</span>
-              <span className="text-xs text-[#4A5568] ml-auto">{stage.sublabel}</span>
+              <span className="text-xs text-[#6B7A99] ml-auto">{stage.sublabel}</span>
             </div>
             <div className="h-2 bg-[#1E2433] rounded-full overflow-hidden">
               <div
@@ -175,7 +175,7 @@ export function InsightCard4({ onNext, animDir, q5Answer }: Props) {
           className="bg-[#141720] border border-[#1E2433] rounded-2xl p-6 mb-6"
           style={{ animation: "fadeInUp 0.5s 0.2s ease both" }}
         >
-          <p className="text-xs text-[#4A5568] uppercase tracking-wider mb-4 text-center">
+          <p className="text-xs text-[#6B7A99] uppercase tracking-wider mb-4 text-center">
             A sequência correta
           </p>
           <div className="space-y-3">
@@ -190,7 +190,7 @@ export function InsightCard4({ onNext, animDir, q5Answer }: Props) {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-white">{row.label}</p>
-                  <p className="text-xs text-[#4A5568]">{row.desc}</p>
+                  <p className="text-xs text-[#6B7A99]">{row.desc}</p>
                 </div>
               </div>
             ))}
@@ -241,7 +241,7 @@ export function InsightCard4({ onNext, animDir, q5Answer }: Props) {
         <div className="grid grid-cols-2 gap-6">
           <div>
             <p className="text-xs text-red-400/70 uppercase tracking-wider mb-3">Ordem errada</p>
-            <div className="space-y-2 text-sm text-[#4A5568]">
+            <div className="space-y-2 text-sm text-[#6B7A99]">
               <div className="flex items-center gap-2">
                 <span>🔥</span> Ativa anúncios
               </div>

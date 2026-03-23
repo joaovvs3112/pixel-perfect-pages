@@ -60,7 +60,7 @@ export function InsightCard5({ onNext, animDir, q7Answer }: Props) {
   const { title, body, closing } = getContent(q7);
 
   const pieData = [
-    { name: "Indicação", value: pct,     color: "#4A5568" },
+    { name: "Indicação", value: pct,     color: "#6B7A99" },
     { name: "Digital",   value: digital, color: "#F59E0B" },
   ];
 
@@ -122,7 +122,7 @@ export function InsightCard5({ onNext, animDir, q7Answer }: Props) {
           <div className="flex-1 space-y-3">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="w-3 h-3 rounded-sm bg-[#4A5568] shrink-0" />
+                <span className="w-3 h-3 rounded-sm bg-[#6B7A99] shrink-0" />
                 <span className="text-sm text-[#8B9ABB]">Indicação</span>
                 <span className="ml-auto text-xl font-black text-white">
                   <AnimatedCounter target={pct} suffix="%" duration={1200} delay={500} />
@@ -130,7 +130,7 @@ export function InsightCard5({ onNext, animDir, q7Answer }: Props) {
               </div>
               <div className="h-2 bg-[#1E2433] rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-[#4A5568] rounded-full"
+                  className="h-full bg-[#6B7A99] rounded-full"
                   style={{ animation: "barGrow 1s 0.6s ease both", width: `${pct}%`, transformOrigin: "left" }}
                 />
               </div>

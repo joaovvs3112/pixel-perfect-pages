@@ -128,14 +128,14 @@ export function InsightCard3({ onNext, animDir, q4Answer, onSelectTicket }: Prop
           >
             {/* Atual */}
             <div className="bg-[#141720] border border-[#1E2433] rounded-2xl p-5">
-              <p className="text-xs text-[#4A5568] uppercase tracking-wider mb-3">Situação atual</p>
+              <p className="text-xs text-[#6B7A99] uppercase tracking-wider mb-3">Situação atual</p>
               <div className="flex flex-col gap-2 text-sm text-[#8B9ABB] mb-4">
                 <span>{weeklyContacts} contatos/semana</span>
                 <span>× 25% de fechamento</span>
                 <span>× {ticket.label} ticket médio</span>
               </div>
               <div className="border-t border-[#1E2433] pt-3">
-                <p className="text-xs text-[#4A5568] mb-1">Receita digital estimada/mês</p>
+                <p className="text-xs text-[#6B7A99] mb-1">Receita digital estimada/mês</p>
                 <p className="text-3xl font-black text-[#8B9ABB]">
                   {zeroContacts ? "R$ 0" : (
                     <>
@@ -187,7 +187,7 @@ export function InsightCard3({ onNext, animDir, q4Answer, onSelectTicket }: Prop
             </p>
           </div>
 
-          <p className="text-[#4A5568] text-xs mb-6 italic">
+          <p className="text-[#6B7A99] text-xs mb-6 italic">
             * Estimativas conservadoras baseadas em médias de mercado. Resultados individuais variam.
           </p>
         </>

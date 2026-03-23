@@ -42,7 +42,7 @@ const steps = [
     title: "Entrega e publicação",
     description:
       "Página publicada, testada em todos os dispositivos e pronta para receber tráfego. Se precisar de orientação para conectar ao domínio, estamos aqui.",
-    time: "no ar em até 7 dias",
+    time: "no ar em até 7 dias úteis",
   },
 ];
 
@@ -66,7 +66,7 @@ const HowItWorksSection = () => {
           >
             <p className="text-accent font-medium mb-2">Como funciona</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Do primeiro contato ao ar em 7 dias
+              Do primeiro contato ao ar em 7 dias úteis
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Um processo enxuto, transparente e sem surpresas — para você focar no seu negócio enquanto a página é construída.

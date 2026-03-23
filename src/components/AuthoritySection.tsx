@@ -33,8 +33,8 @@ const points = [
   },
   {
     icon: Clock,
-    title: "Do briefing ao ar em até 7 dias",
-    description: "Processo documentado em 4 etapas, sem idas e vindas infinitas. Você aprova cada etapa e a página vai ao ar dentro do prazo combinado."
+    title: "Do briefing ao ar em até 7 dias úteis",
+    description: "Processo documentado em 5 etapas, sem idas e vindas infinitas. Você aprova cada etapa e a página vai ao ar dentro do prazo combinado."
   }
 ];
 

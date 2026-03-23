@@ -49,7 +49,7 @@ const comparisons = [
   },
   {
     generic: "Você edita sozinho e quebra o layout",
-    lumen: "Entregue pronta, testada e no ar em 7 dias",
+    lumen: "Entregue pronta, testada e no ar em 7 dias úteis",
   },
 ];
 

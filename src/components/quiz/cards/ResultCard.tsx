@@ -82,8 +82,8 @@ export function ResultCard({ onNext, animDir, profile, answers }: Props) {
           </p>
           <div className="flex items-end gap-6 flex-wrap">
             <div>
-              <p className="text-xs text-[#4A5568] mb-1">Situação atual</p>
-              <p className="text-2xl font-black text-[#4A5568]">
+              <p className="text-xs text-[#6B7A99] mb-1">Situação atual</p>
+              <p className="text-2xl font-black text-[#6B7A99]">
                 R$ {monthly.toLocaleString("pt-BR")}
               </p>
             </div>
