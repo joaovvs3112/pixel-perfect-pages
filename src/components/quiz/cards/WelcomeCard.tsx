@@ -27,10 +27,10 @@ export function WelcomeCard({ onNext, animDir }: WelcomeCardProps) {
         />
         <br />
         <span
-          className="text-amber-400 italic block mt-2"
+          className="text-amber-400 text-2xl md:text-3xl block mt-2"
           style={{ animation: "fadeInUp 0.7s 0.9s ease forwards", opacity: 0 }}
         >
-          e você provavelmente não sabe quantos.
+          (e você provavelmente não sabe quantos.)
         </span>
       </h1>
 

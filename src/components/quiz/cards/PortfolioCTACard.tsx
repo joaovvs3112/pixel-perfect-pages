@@ -1,9 +1,8 @@
 /**
- * Portfolio + CTA Card — Card 12 (Final)
- * Shows portfolio previews + emotional CTA to WhatsApp.
- * After viewing portfolio, a sticky banner with emotional trigger pulls them back.
+ * Portfolio + CTA Card — Card 22 (Final)
+ * Shows portfolio items as compact cards (name + niche + Visitar button).
+ * No image, no URL exposed — keeps the focus on the content and the CTA.
  */
-import { useState } from "react";
 import { portfolioItems, makeWALink, type Profile } from "../quizData";
 
 interface Props {
@@ -13,7 +12,6 @@ interface Props {
 }
 
 export function PortfolioCTACard({ animDir, profile, answers }: Props) {
-  const [expandedItem, setExpandedItem] = useState<number | null>(null);
   const waLink = makeWALink(profile);
 
   const q10 = answers["q10"] ?? 0;
@@ -25,6 +23,15 @@ export function PortfolioCTACard({ animDir, profile, answers }: Props) {
   ];
   const desire = desireMap[q10];
 
+  // Ícones por nicho de mercado
+  const segmentIcon: Record<string, string> = {
+    Odontologia:          "🦷",
+    Advocacia:            "⚖️",
+    Arquitetura:          "🏛️",
+    Contabilidade:        "📊",
+    "Estética Automotiva":"🚗",
+  };
+
   return (
     <div className={`quiz-card ${animDir} max-w-2xl mx-auto`}>
       <div className="insight-badge">EXEMPLOS REAIS</div>
@@ -34,73 +41,48 @@ export function PortfolioCTACard({ animDir, profile, answers }: Props) {
       </h2>
 
       <p className="text-[#8B9ABB] mb-6 leading-relaxed">
-        Cada página abaixo foi construída do zero — com copy, design e integração com WhatsApp.
-        Clique para acessar o projeto ao vivo.
+        Cada página abaixo foi construída do zero — com copy, design e integração
+        com WhatsApp. Clique em "Visitar" para ver o projeto ao vivo.
       </p>
 
-      {/* Portfolio grid */}
-      <div className="space-y-4 mb-8">
+      {/* Portfolio list */}
+      <div className="space-y-3 mb-8">
         {portfolioItems.map((item, i) => (
           <div
             key={i}
-            className="bg-[#141720] border border-[#1E2433] rounded-2xl overflow-hidden group"
-            style={{
-              animation: `fadeInUp 0.5s ${0.2 + i * 0.15}s ease both`,
-              opacity: 0,
-            }}
+            className="bg-[#141720] border border-[#1E2433] rounded-xl p-4 flex items-center gap-4"
+            style={{ animation: `fadeInUp 0.5s ${0.2 + i * 0.12}s ease both`, opacity: 0 }}
           >
-            {/* Preview image (clickable) */}
+            {/* Icon */}
+            <div className="w-10 h-10 rounded-lg bg-[#1E2433] flex items-center justify-center text-xl shrink-0">
+              {segmentIcon[item.segment] ?? "🌐"}
+            </div>
+
+            {/* Name + segment */}
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
+                <p className="text-white font-semibold text-sm">{item.title}</p>
+                {item.isReal && (
+                  <span className="text-[10px] font-bold bg-green-400/10 border border-green-400/30 text-green-400 px-1.5 py-0.5 rounded-full">
+                    Cliente real
+                  </span>
+                )}
+              </div>
+              <p className="text-amber-400/70 text-xs mt-0.5">{item.segment}</p>
+            </div>
+
+            {/* Visit button */}
             <a
               href={`https://${item.url}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="block relative overflow-hidden"
-              style={{ height: 160 }}
+              className="shrink-0 px-3 py-1.5 rounded-lg border border-[#2A3347] bg-[#1E2433] text-[#8B9ABB] hover:border-amber-400/50 hover:text-amber-400 transition-all duration-200 text-xs font-medium flex items-center gap-1"
             >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0D0F14]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                <span className="text-white text-sm font-medium flex items-center gap-1">
-                  Ver ao vivo
-                  <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
-                    <path d="M4 12L12 4M12 4H6M12 4v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                </span>
-              </div>
-              {/* Real client badge */}
-              {item.isReal && (
-                <div className="absolute top-2 left-2 bg-green-400/90 text-[#0D0F14] text-xs font-bold px-2 py-0.5 rounded-full">
-                  Cliente real
-                </div>
-              )}
-              {/* Segment tag */}
-              <div className="absolute top-2 right-2 bg-amber-400/90 text-[#0D0F14] text-xs font-bold px-2 py-0.5 rounded-full">
-                {item.segment}
-              </div>
+              Visitar
+              <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none">
+                <path d="M3 9L9 3M9 3H5M9 3v4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+              </svg>
             </a>
-
-            {/* Info row */}
-            <div className="p-4 flex items-center justify-between">
-              <div>
-                <p className="text-white font-semibold text-sm">{item.title}</p>
-                <p className="text-amber-400 text-xs">{item.url}</p>
-              </div>
-              <a
-                href={`https://${item.url}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#8B9ABB] hover:text-amber-400 transition-colors text-xs flex items-center gap-1"
-              >
-                Visitar
-                <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none">
-                  <path d="M3 9L9 3M9 3H5M9 3v4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-                </svg>
-              </a>
-            </div>
           </div>
         ))}
       </div>

@@ -274,6 +274,20 @@ export const portfolioItems: PortfolioItem[] = [
     segment: "Arquitetura",
     url: "studiolumenarquitetura.netlify.app",
     image: "/src/assets/portfolio-studio-lumen.png",
-    isReal: false, // [PLACEHOLDER] — idem
+    isReal: false,
+  },
+  {
+    title: "Vertex Contabilidade",
+    segment: "Contabilidade",
+    url: "vertexcontabilidade.netlify.app",
+    image: "",
+    isReal: true,
+  },
+  {
+    title: "Autobahn Estética Auto",
+    segment: "Estética Automotiva",
+    url: "autobahnesteticaauto.netlify.app",
+    image: "",
+    isReal: true,
   },
 ];
