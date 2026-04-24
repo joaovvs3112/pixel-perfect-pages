@@ -8,20 +8,20 @@ import { AnimatedCounter } from "../AnimatedCounter";
 interface Props { onNext: () => void; animDir: string; }
 
 const stats = [
-  { value: 40, prefix: "+", suffix: "", label: "páginas entregues" },
-  { value: 12, prefix: "", suffix: "+", label: "segmentos atendidos" },
-  { value: 3.2, prefix: "", suffix: "×", decimals: 1, label: "conversão vs Instagram" },
   { value: 7, prefix: "", suffix: " dias úteis", label: "prazo médio de entrega" },
+  { value: 20, prefix: "+", suffix: "%", label: "conversão no CTA" },
+  { value: 0, prefix: "∞", suffix: "", label: "revisões ilimitadas", skipCounter: true },
+  { value: 30, prefix: "", suffix: " dias", label: "suporte após entrega" },
 ];
 
 const differentiators = [
   {
     title: "Primeira impressão que gera desejo",
-    desc: "Um site visualmente atraente faz com que o lead sinta vontade de contratar antes mesmo de ler o preço. Quem se apresenta com profissionalismo vende mais caro — e o cliente não questiona, porque a experiência já justificou o valor.",
+    desc: "Um site visualmente atraente faz com que o lead sinta vontade de contratar antes mesmo de ler o preço. Quem se apresenta com profissionalismo vende mais caro, e o cliente não questiona, porque a experiência já justificou o valor.",
   },
   {
     title: "Copy estratégico proprietário",
-    desc: "Escrevemos o texto com base em frameworks de persuasão testados (PAS, AIDA, SPIN) aplicados ao nicho do cliente. Você não precisa escrever nada — só nos mostrar como funciona seu negócio. Daí pra frente, é com a gente.",
+    desc: "Escrevemos o texto com base em frameworks de persuasão testados (PAS, AIDA, SPIN) aplicados ao nicho do cliente. Você não precisa escrever nada: só nos mostrar como funciona seu negócio. Daí pra frente, é com a gente.",
   },
   {
     title: "Processo transparente em 5 etapas",
@@ -40,9 +40,9 @@ export function AuthorityCard({ onNext, animDir }: Props) {
       </h2>
 
       <p className="text-[#8B9ABB] mb-6 leading-relaxed">
-        É uma especialização deliberada. Tentamos fazer tudo e percebemos que fazer
-        uma coisa excepcionalmente bem gera resultados 3,2× maiores do que fazer
-        muitas coisas mediocres.
+        É uma especialização deliberada. Cada página é construída do zero com copy
+        estratégico, design focado em conversão e integração completa, tudo pensado
+        para transformar visitante em cliente.
       </p>
 
       {/* Stats grid */}
@@ -58,14 +58,20 @@ export function AuthorityCard({ onNext, animDir }: Props) {
           >
             <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent" />
             <p className="text-3xl font-black text-amber-400">
-              {s.prefix}
-              <AnimatedCounter
-                target={s.value}
-                duration={1400}
-                delay={600 + i * 150}
-                decimals={s.decimals ?? 0}
-              />
-              {s.suffix}
+              {(s as any).skipCounter ? (
+                <>{s.prefix}</>
+              ) : (
+                <>
+                  {s.prefix}
+                  <AnimatedCounter
+                    target={s.value}
+                    duration={1400}
+                    delay={600 + i * 150}
+                    decimals={(s as any).decimals ?? 0}
+                  />
+                  {s.suffix}
+                </>
+              )}
             </p>
             <p className="text-xs text-[#8B9ABB] mt-1">{s.label}</p>
           </div>

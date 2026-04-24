@@ -1,54 +1,55 @@
-import { MessageCircle, FileText, Palette, MessageSquareText, Rocket, Clock } from "lucide-react";
+import { MessageCircle, FileText, Palette, MessageSquareText, Rocket, Clock, Calendar } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { SectionHook } from "@/components/ui/SectionHook";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import React from "react";
 
 const steps = [
   {
     icon: MessageCircle,
     step: "01",
-    title: "Conversa estratégica",
+    title: "Conversa inicial",
     description:
-      "Você entra em contato e fazemos uma conversa rápida para entender seu negócio, público-alvo e objetivo da página. Sem formulários longos — direto ao ponto.",
+      "Uma reunião de 30 minutos para entender seu negócio, seu cliente e seus objetivos. Sem formulários intermináveis. Direto ao ponto.",
     time: "em até 2h",
   },
   {
     icon: FileText,
     step: "02",
-    title: "Briefing + pesquisa de mercado",
+    title: "Pesquisa e estratégia",
     description:
-      "Analisamos o seu segmento, estudamos o que converte para o seu público e mapeamos os principais argumentos da sua oferta antes de escrever uma única linha.",
+      "Analiso seu mercado, estudo seus concorrentes, e construo a estrutura de argumentação da página. Você não precisa fazer nada.",
     time: "em 1 dia útil",
   },
   {
     icon: Palette,
     step: "03",
-    title: "Desenvolvimento exclusivo",
+    title: "Design e desenvolvimento",
     description:
-      "Criamos design, copy e estrutura de conversão integrados. Cada elemento é pensado em conjunto — não é um template com texto trocado.",
+      "Crio o design, escrevo o texto, desenvolvo a página. Tudo integrado e pensado em conjunto. Cada elemento tem um propósito.",
     time: "em até 5 dias úteis",
   },
   {
     icon: MessageSquareText,
     step: "04",
-    title: "Revisão e ajustes finos",
+    title: "Revisão e ajustes",
     description:
-      "Você recebe a página para revisar e pontua o que quiser ajustar. Respondemos e aplicamos as alterações com agilidade, sem burocracia.",
+      "Você revisa, aponta o que quer mudar. Eu ajusto quantas vezes for necessário até você aprovar. Sem limite de revisões.",
     time: "retorno em até 24h",
   },
   {
     icon: Rocket,
     step: "05",
-    title: "Entrega e publicação",
+    title: "Publicação",
     description:
-      "Página publicada, testada em todos os dispositivos e pronta para receber tráfego. Se precisar de orientação para conectar ao domínio, estamos aqui.",
+      "Página testada em todos os dispositivos, publicada e pronta para receber tráfego. Se precisar de ajuda para conectar ao domínio, eu faço junto com você.",
     time: "no ar em até 7 dias úteis",
   },
 ];
 
 const HowItWorksSection = () => {
   const { ref, isVisible } = useScrollAnimation();
-  const whatsappLink = "https://wa.me/5527997983112?text=Olá! Tenho interesse em uma landing page profissional.";
 
   return (
     <section
@@ -58,18 +59,20 @@ const HowItWorksSection = () => {
       style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)' }}
     >
       <div className="max-w-5xl mx-auto relative">
-
         <div className="max-w-6xl mx-auto relative z-10">
+
           {/* Header */}
           <div
             className={`text-center mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <p className="text-accent font-medium mb-2">Como funciona</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Do primeiro contato ao ar em 7 dias úteis
+              Do primeiro contato à página no ar em{" "}
+              <span className="bg-gradient-to-r from-yellow-200 via-amber-400 to-yellow-600 bg-clip-text text-transparent">
+                7 dias úteis
+              </span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Um processo enxuto, transparente e sem surpresas — para você focar no seu negócio enquanto a página é construída.
+              Você foca no seu negócio. Eu cuido de todo o resto.
             </p>
           </div>
 
@@ -116,25 +119,22 @@ const HowItWorksSection = () => {
           <div
             className={`text-center transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <div className="relative inline-block">
-              <div className="absolute -inset-2 bg-gradient-to-r from-amber-400/20 via-yellow-500/20 to-amber-600/20 rounded-xl blur-lg animate-pulse" />
-              <Button
-                className="relative gap-2 px-8 py-5 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-lg shadow-accent/20 hover:shadow-xl hover:scale-105 transition-all duration-300"
-                asChild
-              >
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-4 h-4" />
-                  Quero começar agora
-                </a>
-              </Button>
-            </div>
-            <p className="text-xs text-muted-foreground/40 mt-3">
-              Sem compromisso · Resposta em até 2h
-            </p>
+            <Button
+              className="gap-2 px-8 py-5 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-lg shadow-accent/20 hover:shadow-xl hover:scale-105 transition-all duration-300"
+              asChild
+            >
+              <Link to="/agendar">
+                <Calendar className="w-4 h-4" />
+                Quero começar agora
+              </Link>
+            </Button>
           </div>
 
         </div>
       </div>
+
+      {/* Hook de transição */}
+      <SectionHook text="Mas quanto custa tudo isso?" />
     </section>
   );
 };

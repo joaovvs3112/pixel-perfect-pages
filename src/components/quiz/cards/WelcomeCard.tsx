@@ -68,7 +68,7 @@ export function WelcomeCard({ onNext, animDir }: WelcomeCardProps) {
         className="text-[#6B7A99] text-sm mt-5"
         style={{ animation: "fadeInUp 0.7s 1.5s ease forwards", opacity: 0 }}
       >
-        +40 negócios locais já descobriram isso · Sem compromisso
+        Diagnóstico gratuito · 2 minutos · Sem compromisso
       </p>
     </div>
   );

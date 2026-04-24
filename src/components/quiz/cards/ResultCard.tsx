@@ -18,7 +18,7 @@ export function ResultCard({ onNext, animDir, profile, answers }: Props) {
   const ticket = getTicketRange(answers["q6"] ?? 1);
   const weekly = getWeeklyContacts(answers["q4"] ?? 1);
   const monthly = Math.round(weekly * 4 * 0.25 * ticket.mid);
-  const potential = Math.round(monthly * 3.2);
+  const potential = Math.round(monthly * 2);
   const gap = potential - monthly;
 
   return (

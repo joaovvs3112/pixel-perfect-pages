@@ -90,7 +90,7 @@ export function InsightCard6({ onNext, animDir, q9Answer }: Props) {
         </div>
 
         <button onClick={onNext} className="quiz-insight-btn">
-          Ver meu diagnóstico
+          Perfeito. Última →
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
@@ -130,7 +130,7 @@ export function InsightCard6({ onNext, animDir, q9Answer }: Props) {
         </div>
 
         <button onClick={onNext} className="quiz-insight-btn">
-          Ver meu diagnóstico
+          Perfeito. Última →
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
@@ -169,7 +169,7 @@ export function InsightCard6({ onNext, animDir, q9Answer }: Props) {
         </div>
 
         <button onClick={onNext} className="quiz-insight-btn">
-          Ver meu diagnóstico
+          Perfeito. Última →
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>

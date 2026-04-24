@@ -13,10 +13,12 @@ import { InsightCard3 } from "../components/quiz/cards/InsightCard3";
 import { InsightCard4 } from "../components/quiz/cards/InsightCard4";
 import { InsightCard5 } from "../components/quiz/cards/InsightCard5";
 import { InsightCard6 } from "../components/quiz/cards/InsightCard6";
+import { InsightCard7 } from "../components/quiz/cards/InsightCard7";
 import { LoadingCard } from "../components/quiz/cards/LoadingCard";
 import { LeadCaptureCard } from "../components/quiz/cards/LeadCaptureCard";
 import { ResultCard } from "../components/quiz/cards/ResultCard";
 import { AuthorityCard } from "../components/quiz/cards/AuthorityCard";
+import { AboutCard } from "../components/quiz/cards/AboutCard";
 import { SocialProofCard } from "../components/quiz/cards/SocialProofCard";
 import { PortfolioCTACard } from "../components/quiz/cards/PortfolioCTACard";
 
@@ -28,7 +30,7 @@ function animDir(step: number) {
 
 // Map question steps to their 1-based display number
 const questionNumbers: Record<number, number> = {
-  1: 1, 3: 2, 5: 3, 6: 4, 8: 5, 10: 6, 11: 7, 13: 8, 14: 9, 16: 10,
+  1: 1, 3: 2, 5: 3, 6: 4, 8: 5, 10: 6, 12: 7, 14: 8, 15: 9, 17: 10,
 };
 
 export default function Quiz() {
@@ -37,8 +39,8 @@ export default function Quiz() {
   const step = STEPS[currentStep];
   const dir = animDir(currentStep);
 
-  // Don't allow going back from loading card (17) onwards
-  const showBack = currentStep > 0 && currentStep < 17;
+  // Don't allow going back from loading card (18) onwards
+  const showBack = currentStep > 0 && currentStep < 18;
 
   // ─── Lead capture handler ───────────────────────────────────────────────────
   // Called when the user submits their contact info (or skips).
@@ -126,6 +128,15 @@ export default function Quiz() {
                 q9Answer={answers["q9"]}
               />
             );
+          case 7:
+            return (
+              <InsightCard7
+                key={currentStep}
+                onNext={actions.goNext}
+                animDir={dir}
+                q6Answer={answers["q6"]}
+              />
+            );
         }
         break;
 
@@ -159,6 +170,11 @@ export default function Quiz() {
           <AuthorityCard key={currentStep} onNext={actions.goNext} animDir={dir} />
         );
 
+      case "about":
+        return (
+          <AboutCard key={currentStep} onNext={actions.goNext} animDir={dir} />
+        );
+
       case "social":
         return (
           <SocialProofCard key={currentStep} onNext={actions.goNext} animDir={dir} />
@@ -171,6 +187,7 @@ export default function Quiz() {
             animDir={dir}
             profile={profile}
             answers={answers}
+            leadData={state.leadData}
           />
         );
 

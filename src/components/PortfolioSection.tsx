@@ -1,15 +1,28 @@
 import { useState, useEffect, useCallback } from "react";
-import { MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Calendar } from "lucide-react";
+import { SectionHook } from "@/components/ui/SectionHook";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Link } from "react-router-dom";
 
-import portfolioSorrir from "@/assets/portfolio-sorrir-studio.png";
+import portfolioAtylaneto from "@/assets/ref-atylaneto.jpeg";
+import portfolioSorrir from "@/assets/ref-sorrir.jpeg";
 import portfolioAlves from "@/assets/portfolio-alves-associados.png";
-import portfolioLumen from "@/assets/portfolio-studio-lumen.png";
+import portfolioVertex from "@/assets/ref-vertex.jpeg";
+import portfolioArco from "@/assets/ref-arco.jpeg";
 
 const portfolioItems = [
   {
     id: 1,
+    title: "Dr. Atyla Neto",
+    description: "Página de alta conversão para ortopedista: posicionamento de autoridade, prova social e captação direta de pacientes pelo digital.",
+    image: portfolioAtylaneto,
+    url: "dratylanetoupdate.netlify.app",
+    fullUrl: "https://dratylanetoupdate.netlify.app/",
+    tag: "Ortopedia",
+  },
+  {
+    id: 2,
     title: "Sorrir Studio",
     description: "Design acolhedor e profissional que transmite confiança e converte visitantes em pacientes antes mesmo do primeiro contato.",
     image: portfolioSorrir,
@@ -18,7 +31,7 @@ const portfolioItems = [
     tag: "Odontologia",
   },
   {
-    id: 2,
+    id: 3,
     title: "Alves Associados",
     description: "Presença digital sólida e profissional que transmite autoridade e capta clientes qualificados para o escritório.",
     image: portfolioAlves,
@@ -27,12 +40,21 @@ const portfolioItems = [
     tag: "Advocacia",
   },
   {
-    id: 3,
-    title: "Studio Lumen Arquitetura",
+    id: 4,
+    title: "Vertex Contabilidade",
+    description: "Estrutura que posiciona o escritório como referência técnica e gera contatos qualificados de empresários em busca de gestão contábil.",
+    image: portfolioVertex,
+    url: "vertexcontabilidade.netlify.app",
+    fullUrl: "https://vertexcontabilidade.netlify.app/",
+    tag: "Contabilidade",
+  },
+  {
+    id: 5,
+    title: "Arco Arquitetura",
     description: "Visual sofisticado e editorial que valoriza o portfólio e posiciona o escritório como referência no mercado de arquitetura.",
-    image: portfolioLumen,
-    url: "studiolumenarquitetura.netlify.app",
-    fullUrl: "https://studiolumenarquitetura.netlify.app/",
+    image: portfolioArco,
+    url: "arcoarquiteturavix.netlify.app",
+    fullUrl: "https://arcoarquiteturavix.netlify.app/",
     tag: "Arquitetura",
   },
 ];
@@ -104,14 +126,14 @@ const PortfolioSection = () => {
           className={`text-center mb-14 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
         >
-          <p className="text-accent font-medium mb-2 tracking-widest uppercase text-sm">
-            Nossa Galeria
-          </p>
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
-            Obras de Arte Digitais
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+            Projetos que{" "}
+            <span className="bg-gradient-to-r from-yellow-200 via-amber-400 to-yellow-600 bg-clip-text text-transparent">
+              convertem de verdade
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Cada projeto é tratado como uma peça única de design e engenharia.
+            Cada projeto é tratado com o mesmo nível de atenção. Veja o padrão de qualidade que você vai receber.
           </p>
         </div>
 
@@ -163,7 +185,7 @@ const PortfolioSection = () => {
                     key={item.id}
                     src={item.image}
                     alt={item.title}
-                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out ${index === activeIndex
+                    className={`absolute inset-0 w-full h-full object-contain object-top transition-all duration-500 ease-in-out ${index === activeIndex
                       ? "opacity-100 scale-100"
                       : "opacity-0 scale-[1.02]"
                       }`}
@@ -232,23 +254,20 @@ const PortfolioSection = () => {
 
           {/* CTA */}
           <div className="mt-10 flex justify-center">
-            <div className="relative inline-block group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-amber-400/40 via-yellow-500/40 to-amber-600/40 rounded-full blur-lg opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
-              <Button
-                size="lg"
-                className="relative bg-accent hover:bg-accent/90 text-accent-foreground px-10 py-7 text-lg font-bold shadow-xl transition-all duration-300 hover:scale-105"
-                onClick={() =>
-                  window.open(
-                    "https://wa.me/5527997983112?text=Quero um site nesse nível.",
-                    "_blank"
-                  )
-                }
-              >
-                <MessageCircle className="w-6 h-6 mr-2" />
-                Quero um site nesse nível
-              </Button>
-            </div>
+            <Button
+              size="lg"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-base font-bold shadow-lg shadow-accent/20 hover:shadow-xl hover:scale-105 transition-all duration-300 gap-2"
+              asChild
+            >
+              <Link to="/agendar">
+                <Calendar className="w-5 h-5" />
+                Quero uma página nesse nível
+              </Link>
+            </Button>
           </div>
+
+          {/* Hook de transição */}
+          <SectionHook text="E você não precisa de nada pra começar" />
         </div>
       </div>
     </section>

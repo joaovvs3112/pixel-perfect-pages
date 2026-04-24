@@ -1,46 +1,30 @@
-import { AlertTriangle, TrendingDown, XCircle } from "lucide-react";
+import { TrendingDown, XCircle, AlertTriangle } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { ScrollCounter } from "@/components/ui/ScrollCounter";
+import { SectionHook } from "@/components/ui/SectionHook";
 import { WordReveal } from "@/components/quiz/WordReveal";
 import React from "react";
-
-/**
- * ProblemSection — mostra as dores do público-alvo.
- *
- * Efeitos aplicados:
- *   1. WordReveal no headline principal
- *   2. ScrollCounter nos stats de cada card (70%, 3s, 80%)
- *   3. Cards com entrada alternada: direita, baixo, esquerda
- */
 
 const problems = [
   {
     icon: TrendingDown,
-    statTarget: 70,
-    statSuffix: "% dos cliques em anúncios se perdem no Instagram",
-    title: "Jogando dinheiro fora",
+    title: "70% perdidos no Instagram",
     description:
-      "Você investe R$50/dia em anúncios, o cliente clica e cai no perfil cheio de distrações — Stories, posts, seguidores. Quando percebe, saiu sem entrar em contato. Cada clique desperdiçado é dinheiro real saindo do seu bolso, todo dia.",
+      "O cliente clica no anúncio, cai no perfil, vê Stories, posts, seguidores e esquece por que estava ali. Quando percebe, já fechou a aba.",
   },
   {
     icon: XCircle,
-    statTarget: 3,
-    statSuffix: " segundos para o visitante julgar seu site",
-    title: "O 'Sobrinho' que fez",
+    title: "3 segundos para decidir",
     description:
-      "Design amador não é só estética — é sinal de alerta. Se sua página parece que foi feita de graça, o cliente conclui que seu serviço também não vale muito. A primeira impressão define se ele vai continuar lendo ou fechar a aba.",
+      "É o tempo que o visitante leva para julgar se confia em você. Página amadora = serviço amador. Ele não lê: ele sente.",
   },
   {
     icon: AlertTriangle,
-    statTarget: 80,
-    statSuffix: "% dos visitantes saem em 5 segundos",
-    title: "Sem Estratégia",
+    title: "Visitante sem rumo",
     description:
-      "Bonito não basta. Sem uma headline que prende, prova de valor e botão de contato no momento certo, o visitante fecha a aba sem deixar nem o e-mail. Uma página bonita sem estratégia é vitrine sem caixa registradora.",
+      "Sem um caminho claro até o contato, o cliente fica perdido. Olha, rola, e vai embora. Você pagou pelo clique e não recebeu nada em troca.",
   },
 ];
 
-// Alternando: direita → baixo → esquerda
 const entryDirs = [
   { off: "opacity-0 translate-x-10",  on: "opacity-100 translate-x-0" },
   { off: "opacity-0 translate-y-8",   on: "opacity-100 translate-y-0" },
@@ -64,18 +48,15 @@ const ProblemSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               {isVisible ? (
                 <WordReveal
-                  text="Por que seu concorrente vende mais gastando o mesmo em anúncios?"
-                  highlight={["concorrente", "mais"]}
+                  text="Por que seus anúncios não trazem clientes?"
+                  highlight={["não", "trazem", "clientes?"]}
                   stagger={60}
                   baseDelay={100}
                 />
               ) : (
-                <span className="opacity-0">Por que seu concorrente vende mais gastando o mesmo em anúncios?</span>
+                <span className="opacity-0">Por que seus anúncios não trazem clientes?</span>
               )}
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              A diferença não está no orçamento — está em para onde o tráfego é enviado.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -87,16 +68,6 @@ const ProblemSection = () => {
                   className={`relative p-6 rounded-lg border border-border/10 bg-white/5 backdrop-blur-sm hover:border-accent/30 transition-all duration-700 ${isVisible ? d.on : d.off}`}
                   style={{ transitionDelay: `${(index + 1) * 150}ms` }}
                 >
-                  {/* Stat com counter animado */}
-                  <p className="text-xs font-semibold text-accent mb-4 leading-snug border-l-2 border-accent/40 pl-3 bg-accent/5 py-1.5 pr-2 rounded-r-md">
-                    <ScrollCounter
-                      target={problem.statTarget}
-                      suffix={problem.statSuffix}
-                      delay={index * 300}
-                      duration={1400}
-                    />
-                  </p>
-
                   <div className="w-12 h-12 rounded-lg bg-destructive/10 flex items-center justify-center mb-4">
                     <problem.icon className="w-6 h-6 text-destructive" />
                   </div>
@@ -112,6 +83,9 @@ const ProblemSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Hook de transição */}
+      <SectionHook text="Mas a solução não é o que você pensa" />
     </section>
   );
 };

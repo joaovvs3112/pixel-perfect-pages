@@ -8,7 +8,7 @@ export const WA_BASE = `https://wa.me/${WA_NUMBER}`;
 export function makeWALink(profile: Profile | null): string {
   const messages: Record<Profile, string> = {
     A: "Olá! Fiz o diagnóstico da Lumen Pages e descobri que minha presença digital está invisível. Quero entender como uma landing page pode mudar isso.",
-    B: "Olá! Fiz o diagnóstico da Lumen Pages e descobri que tenho potencial represado — estou com presença mas convertendo pouco. Quero conversar.",
+    B: "Olá! Fiz o diagnóstico da Lumen Pages e descobri que tenho potencial represado: estou com presença mas convertendo pouco. Quero conversar.",
     C: "Olá! Fiz o diagnóstico da Lumen Pages e descobri que já investi em anúncios mas sem a estrutura certa. Quero resolver isso com uma landing page.",
   };
   const msg = profile ? messages[profile] : "Olá! Fiz o diagnóstico da Lumen Pages e quero conversar sobre uma landing page para meu negócio.";
@@ -37,7 +37,7 @@ export const questions: QuizQuestion[] = [
     id: "q2",
     text: "Você tem uma página exclusiva para receber clientes novos?",
     options: [
-      "Sim — tenho um site ou landing page profissional",
+      "Sim, tenho um site ou landing page profissional",
       "Só tenho meu perfil no Instagram",
       "Tenho um link na bio (Linktree ou similar)",
       "Não tenho nada além do boca a boca",
@@ -49,7 +49,7 @@ export const questions: QuizQuestion[] = [
     options: [
       "Mando o link do meu Instagram",
       "Mando fotos no WhatsApp mesmo",
-      "Tenho um site, mas não gosto de mandar — está desatualizado",
+      "Tenho um site, mas não gosto de mandar: está desatualizado",
       "Tenho uma página profissional e mando com confiança",
     ],
   },
@@ -57,10 +57,10 @@ export const questions: QuizQuestion[] = [
     id: "q4",
     text: "Em média, quantos contatos novos chegam pelo digital por semana?",
     options: [
-      "Zero — nada vem do digital",
+      "Zero: nada vem do digital",
       "1 a 3 contatos por semana",
       "4 a 10 contatos por semana",
-      "Mais de 10 — o digital funciona bem",
+      "Mais de 10, o digital funciona bem",
     ],
   },
   {
@@ -70,27 +70,27 @@ export const questions: QuizQuestion[] = [
       "Sim, invisto regularmente e funciona bem",
       "Já tentei, mas gastei dinheiro e não vi resultado",
       "Quero tentar, mas tenho medo de desperdiçar dinheiro",
-      "Nunca tentei — não sei por onde começar",
+      "Nunca tentei, não sei por onde começar",
     ],
   },
   {
     id: "q6",
-    text: "Qual é o ticket médio de serviço do seu negócio?",
+    text: "Quando alguém demonstra interesse no seu serviço, o que acontece?",
     options: [
-      "Até R$ 300",
-      "Entre R$ 300 e R$ 1.000",
-      "Entre R$ 1.000 e R$ 3.000",
-      "Acima de R$ 3.000",
+      "Respondo na hora pelo WhatsApp",
+      "Respondo quando consigo, no mesmo dia",
+      "Às vezes demoro mais de 24h para responder",
+      "Não tenho um processo definido para isso",
     ],
   },
   {
     id: "q7",
     text: "Hoje, qual o percentual de clientes novos que vêm por indicação?",
     options: [
-      "Quase 100% — o digital não me traz nada",
-      "Uns 70% a 80% — o digital traz alguma coisa",
-      "Uns 50% — está equilibrado",
-      "Menos de 30% — o digital já funciona bem",
+      "Quase 100%, o digital não me traz nada",
+      "Uns 70% a 80%, o digital traz alguma coisa",
+      "Uns 50%, está equilibrado",
+      "Menos de 30%, o digital já funciona bem",
     ],
   },
   {
@@ -108,7 +108,7 @@ export const questions: QuizQuestion[] = [
     text: "O que mais te impede de avançar nessa direção hoje?",
     options: [
       "Não sei por onde começar ou o que preciso exatamente",
-      "Já tentei antes e não deu resultado — perdi a confiança",
+      "Já tentei antes e não deu resultado, perdi a confiança",
       "Tenho medo de investir e não ter retorno",
       "Falta de tempo para me dedicar a isso",
     ],
@@ -137,11 +137,12 @@ export interface LeadData {
 export type StepType =
   | { kind: "welcome" }
   | { kind: "question"; index: number }   // index into questions[]
-  | { kind: "insight"; id: 1|2|3|4|5|6 }
+  | { kind: "insight"; id: 1|2|3|4|5|6|7 }
   | { kind: "loading" }
   | { kind: "leadcapture" }              // Gate before results — collects name/email/phone
   | { kind: "result" }
   | { kind: "authority" }
+  | { kind: "about" }
   | { kind: "social" }
   | { kind: "cta" };
 
@@ -156,19 +157,21 @@ export const STEPS: StepType[] = [
   { kind: "insight", id: 3 },    // 7  — Card 4 (calculator, after Q4)
   { kind: "question", index: 4 }, // 8  — Q5
   { kind: "insight", id: 4 },    // 9  — Card 5 (funnel, after Q5)
-  { kind: "question", index: 5 }, // 10 — Q6
-  { kind: "question", index: 6 }, // 11 — Q7
-  { kind: "insight", id: 5 },    // 12 — Card 6 (referral, after Q7)
-  { kind: "question", index: 7 }, // 13 — Q8
-  { kind: "question", index: 8 }, // 14 — Q9
-  { kind: "insight", id: 6 },    // 15 — Card 7 (ROI, after Q9)
-  { kind: "question", index: 9 }, // 16 — Q10
-  { kind: "loading" },           // 17 — Card 8 (loading / analysis)
-  { kind: "leadcapture" },       // 18 — Lead gate (name + email + phone)
-  { kind: "result" },            // 19 — Card 9 (profile result)
-  { kind: "authority" },         // 20 — Card 10
-  { kind: "social" },            // 21 — Card 11
-  { kind: "cta" },               // 22 — Card 12
+  { kind: "question", index: 5 }, // 10 — Q6 (lead response)
+  { kind: "insight", id: 7 },    // 11 — Card 5b (lead response insight, after Q6)
+  { kind: "question", index: 6 }, // 12 — Q7
+  { kind: "insight", id: 5 },    // 13 — Card 6 (referral, after Q7)
+  { kind: "question", index: 7 }, // 14 — Q8
+  { kind: "question", index: 8 }, // 15 — Q9
+  { kind: "insight", id: 6 },    // 16 — Card 7 (ROI, after Q9)
+  { kind: "question", index: 9 }, // 17 — Q10
+  { kind: "loading" },           // 18 — Card 8 (loading / analysis)
+  { kind: "leadcapture" },       // 19 — Lead gate (name + email + phone)
+  { kind: "result" },            // 20 — Card 9 (profile result)
+  { kind: "authority" },         // 21 — Card 10
+  { kind: "about" },             // 22 — Card 11 (quem vai cuidar do seu projeto)
+  { kind: "social" },            // 23 — Card 12
+  { kind: "cta" },               // 24 — Card 13
 ];
 
 // ─── Profile ──────────────────────────────────────────────────────────────────
@@ -189,9 +192,9 @@ export const PROFILES: Record<Profile, ProfileData> = {
     id: "A",
     badge: "DIAGNÓSTICO",
     title: "Presença Invisível",
-    subtitle: "Você tem um negócio real — mas o digital ainda não sabe que você existe.",
+    subtitle: "Você tem um negócio real, mas o digital ainda não sabe que você existe.",
     description:
-      "Suas respostas revelam um negócio construído sobre qualidade e reputação — o que é genuinamente raro. O problema é que essa autoridade está presa dentro de um círculo fechado de indicações. Quando alguém de fora desse círculo pesquisa pelo serviço que você oferece, encontra outro nome. Provavelmente um concorrente com qualidade inferior à sua, mas com uma página que transmite mais confiança em 8 segundos.",
+      "Suas respostas revelam um negócio construído sobre qualidade e reputação, o que é genuinamente raro. O problema é que essa autoridade está presa dentro de um círculo fechado de indicações. Quando alguém de fora desse círculo pesquisa pelo serviço que você oferece, encontra outro nome. Provavelmente um concorrente com qualidade inferior à sua, mas com uma página que transmite mais confiança em 8 segundos.",
     urgency:
       "Cada dia sem uma landing page é um cliente que encontrou o concorrente antes de te encontrar.",
     color: "#F59E0B",
@@ -200,9 +203,9 @@ export const PROFILES: Record<Profile, ProfileData> = {
     id: "B",
     badge: "DIAGNÓSTICO",
     title: "Potencial Represado",
-    subtitle: "Você tem visibilidade — mas está convertendo muito abaixo do seu potencial.",
+    subtitle: "Você tem visibilidade, mas está convertendo muito abaixo do seu potencial.",
     description:
-      "Você existe digitalmente. O problema é que sua estrutura atual não foi construída para vender — ela foi construída para parecer presente. Há uma diferença enorme entre os dois, e essa diferença custa leads todos os dias. Visitantes chegam, olham por alguns segundos e vão embora sem entrar em contato — não porque seu serviço não é bom, mas porque a página não os convenceu a agir.",
+      "Você existe digitalmente. O problema é que sua estrutura atual não foi construída para vender, foi construída para parecer presente. Há uma diferença enorme entre os dois, e essa diferença custa leads todos os dias. Visitantes chegam, olham por alguns segundos e vão embora sem entrar em contato, não porque seu serviço não é bom, mas porque a página não os convenceu a agir.",
     urgency:
       "Com a estrutura certa, você poderia converter 3× mais dos visitantes que já chegam até você hoje.",
     color: "#3B82F6",
@@ -211,11 +214,11 @@ export const PROFILES: Record<Profile, ProfileData> = {
     id: "C",
     badge: "DIAGNÓSTICO",
     title: "Investimento Sem Retorno",
-    subtitle: "O problema nunca foi o anúncio — foi para onde ele levava.",
+    subtitle: "O problema nunca foi o anúncio: foi para onde ele levava.",
     description:
-      "Você investiu em tráfego mas não tinha a estrutura para convertê-lo. É como abastecer um carro com o tanque furado: o combustível chega, mas não fica. A boa notícia é que o problema tem solução direta. Quando resolvido, cada real investido em anúncio passa a ter retorno calculável — e o que parecia um desperdício se transforma em previsibilidade.",
+      "Você investiu em tráfego mas não tinha a estrutura para convertê-lo. É como abastecer um carro com o tanque furado: o combustível chega, mas não fica. A boa notícia é que o problema tem solução direta. Quando resolvido, cada real investido em anúncio passa a ter retorno calculável, e o que parecia um desperdício se transforma em previsibilidade.",
     urgency:
-      "Sua próxima campanha de anúncios pode ter ROI real — se tiver a estrutura certa para receber o tráfego.",
+      "Sua próxima campanha de anúncios pode ter ROI real, se tiver a estrutura certa para receber o tráfego.",
     color: "#10B981",
   },
 };
@@ -256,32 +259,39 @@ export interface PortfolioItem {
 
 export const portfolioItems: PortfolioItem[] = [
   {
+    title: "Dr. Atyla Neto",
+    segment: "Ortopedia",
+    url: "dratylanetoupdate.netlify.app",
+    image: "/src/assets/ref-atylaneto.jpeg",
+    isReal: true,
+  },
+  {
     title: "Sorrir Studio",
     segment: "Odontologia",
     url: "sorrirstudio.netlify.app",
-    image: "/src/assets/portfolio-sorrir-studio.png",
-    isReal: false, // [PLACEHOLDER] — mude para true quando confirmar qual é o cliente real
+    image: "/src/assets/ref-sorrir.jpeg",
+    isReal: false,
   },
   {
     title: "Alves Associados",
     segment: "Advocacia",
     url: "alvesassociados.netlify.app",
     image: "/src/assets/portfolio-alves-associados.png",
-    isReal: false, // [PLACEHOLDER] — idem
-  },
-  {
-    title: "Studio Lumen Arquitetura",
-    segment: "Arquitetura",
-    url: "studiolumenarquitetura.netlify.app",
-    image: "/src/assets/portfolio-studio-lumen.png",
     isReal: false,
   },
   {
     title: "Vertex Contabilidade",
     segment: "Contabilidade",
     url: "vertexcontabilidade.netlify.app",
-    image: "",
+    image: "/src/assets/ref-vertex.jpeg",
     isReal: true,
+  },
+  {
+    title: "Arco Arquitetura",
+    segment: "Arquitetura",
+    url: "arcoarquiteturavix.netlify.app",
+    image: "/src/assets/ref-arco.jpeg",
+    isReal: false,
   },
   {
     title: "Autobahn Estética Auto",

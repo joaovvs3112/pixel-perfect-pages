@@ -1,9 +1,8 @@
-import { MessageCircle, Zap, Layout, MousePointerClick, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowDown, Clock, Fingerprint, ShieldCheck } from "lucide-react";
+import { EtheralShadow } from "@/components/ui/EtheralShadow";
+import { SectionHook } from "@/components/ui/SectionHook";
 
 const HeroSection = () => {
-  const whatsappLink = "https://wa.me/5527997983112?text=Olá! Tenho interesse em uma landing page profissional.";
-
   const handleNavClick = (href: string) => {
     const target = document.querySelector(href);
     if (target) {
@@ -13,82 +12,68 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-full px-4 pt-24 pb-16 md:pt-32 md:pb-24 flex flex-col items-center justify-center overflow-visible" style={{ maskImage: 'linear-gradient(to bottom, black 80%, transparent)' }}>
+    <section className="relative w-full px-4 pt-24 pb-16 md:pt-32 md:pb-24 flex flex-col items-center justify-center overflow-hidden" style={{ maskImage: 'linear-gradient(to bottom, black 80%, transparent)' }}>
 
-      {/* No container divs blocking the view - Content floats directly on ReactiveBackground */}
+      {/* Ethereal Shadow Background */}
+      <EtheralShadow
+        color="rgba(180, 130, 30, 0.35)"
+        animation={{ scale: 90, speed: 95 }}
+        noise={{ opacity: 0.6, scale: 1.2 }}
+        sizing="fill"
+        className="pointer-events-none"
+      />
 
       <div className="relative z-10 max-w-6xl mx-auto text-center pointer-events-none">
 
-        {/* Badge - Minimalist */}
+        {/* Tagline */}
         <div className="inline-flex items-center gap-2 mb-8 opacity-0 animate-fade-up pointer-events-auto">
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          <span className="text-sm font-medium tracking-wide uppercase text-muted-foreground">Landing pages de alta conversão</span>
+          <span className="text-sm font-medium tracking-wide uppercase text-muted-foreground">Para negócios locais que investem em anúncios</span>
         </div>
 
-        {/* Main headline - Massive */}
+        {/* Headline */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-foreground mb-8 text-balance opacity-0 animate-fade-up-delay-1 leading-[0.9]">
-          A página certa faz<br className="hidden md:block" /> mais diferença que{" "}
-          <span className="bg-gradient-to-r from-yellow-200 via-amber-400 to-yellow-600 bg-clip-text text-transparent drop-shadow-sm">o anúncio</span>
+          Você paga pelo clique.<br />
+          <span className="bg-gradient-to-r from-yellow-200 via-amber-400 to-yellow-600 bg-clip-text text-transparent drop-shadow-sm">Seu Instagram perde o cliente.</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="text-xl md:text-2xl text-muted-foreground/80 max-w-2xl mx-auto mb-10 text-balance opacity-0 animate-fade-up-delay-2 font-light">
-          Pare de perder dinheiro com cliques que não convertem. Tenha um design profissional que vende por você.
+        <p className="text-lg md:text-xl text-muted-foreground/80 max-w-xl mx-auto mb-12 text-balance opacity-0 animate-fade-up-delay-2 font-light">
+          Uma landing page profissional recupera os cliques que o Instagram desperdiça.
         </p>
 
-        {/* Stat line — substitui o bloco de preço */}
-        <div className="mb-12 opacity-0 animate-fade-up-delay-2 pointer-events-auto">
-          <p className="text-sm md:text-base text-muted-foreground/60 max-w-lg mx-auto border-t border-white/5 pt-6 leading-relaxed">
-            <span className="text-accent font-semibold">70% dos cliques em anúncios</span> se perdem quando o destino é o Instagram —
-            sem uma página dedicada, você paga pelo tráfego que não converte.
-          </p>
-        </div>
-
-        {/* CTA — primário + dois secundários */}
+        {/* CTA suave — sem botão forte */}
         <div className="flex flex-col items-center gap-4 opacity-0 animate-fade-up-delay-3 pointer-events-auto">
-          <Button
-            size="lg"
-            className="h-14 px-8 text-lg bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-[0_0_30px_-5px_hsl(var(--accent)/0.3)] hover:shadow-[0_0_40px_-5px_hsl(var(--accent)/0.5)] transition-all duration-300 hover:scale-105"
-            asChild
+          <button
+            onClick={() => handleNavClick("#como-funciona")}
+            className="inline-flex items-center gap-2 text-base text-muted-foreground/70 hover:text-accent transition-colors duration-200 px-6 py-3 rounded-full hover:bg-white/5 border border-white/10 hover:border-accent/30"
           >
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="w-6 h-6 mr-2" />
-              Falar no WhatsApp
-            </a>
-          </Button>
-
-          {/* CTAs secundários lado a lado */}
-          <div className="flex items-center gap-2 text-sm">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground h-9 px-4" asChild>
-              <a href="#portfolio">Ver portfólio</a>
-            </Button>
-            <span className="text-muted-foreground/30 select-none">·</span>
-            <button
-              onClick={() => handleNavClick("#como-funciona")}
-              className="inline-flex items-center gap-1 text-muted-foreground/70 hover:text-accent transition-colors duration-200 px-4 py-2 rounded-md hover:bg-white/5"
-            >
-              Como funciona
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
+            Ver como funciona
+            <ArrowDown className="w-4 h-4" />
+          </button>
         </div>
 
-        {/* Trust indicators - Clean, no badges */}
+        {/* Micro-prova / Trust indicators */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-wrap items-center justify-center gap-8 md:gap-16 text-sm font-medium text-muted-foreground opacity-0 animate-fade-up-delay-3 pointer-events-auto">
           <div className="flex items-center gap-3">
-            <Zap className="w-5 h-5 text-accent" />
-            <span>Entrega rápida</span>
+            <Clock className="w-5 h-5 text-accent" />
+            <span>Entrega em 7 dias úteis</span>
           </div>
           <div className="flex items-center gap-3">
-            <Layout className="w-5 h-5 text-accent" />
-            <span>Design Exclusivo</span>
+            <ShieldCheck className="w-5 h-5 text-accent" />
+            <span>Sem mensalidade</span>
           </div>
           <div className="flex items-center gap-3">
-            <MousePointerClick className="w-5 h-5 text-accent" />
-            <span>Foco em Conversão</span>
+            <Fingerprint className="w-5 h-5 text-accent" />
+            <span>Página 100% sua</span>
           </div>
         </div>
 
+      </div>
+
+      {/* Hook de transição */}
+      <div className="relative z-10 pointer-events-none">
+        <SectionHook text="Veja por que isso acontece" />
       </div>
     </section>
   );

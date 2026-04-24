@@ -11,28 +11,34 @@ import {
 
 const faqs = [
   {
-    question: "Quanto tempo leva para a landing page ficar pronta?",
-    answer: "O prazo médio é de 5 a 7 dias úteis após o envio de todas as informações necessárias. Projetos mais simples podem ser entregues em menos tempo.",
-  },
-  {
-    question: "Tem garantia? E se eu não gostar?",
-    answer: "Sim. Trabalhamos com uma rodada de revisões incluída após a entrega para garantir que a página esteja exatamente como você quer. Antes de qualquer desenvolvimento, você aprova a estrutura e o rascunho — sem surpresas no final.",
+    question: "Quanto tempo leva para ficar pronta?",
+    answer:
+      "O prazo médio é de 5 a 7 dias úteis após a conversa inicial. Você acompanha cada etapa e aprova antes de ir ao ar.",
   },
   {
     question: "Preciso fornecer o texto da página?",
-    answer: "Não. Criamos toda a copy personalizada com base nas informações do seu negócio. Você só precisa nos contar sobre seus serviços, diferenciais e público-alvo.",
+    answer:
+      "Não. Eu escrevo toda a copy do zero, com base no que conversamos sobre seu negócio, seus clientes e seus objetivos. Você só revisa e aprova.",
   },
   {
-    question: "A landing page funciona em celular?",
-    answer: "Sim. Todas as páginas são 100% responsivas e otimizadas para smartphones, tablets e desktops — onde a maioria dos seus leads chega.",
+    question: "E se eu não gostar do resultado?",
+    answer:
+      "Revisões ilimitadas até você aprovar. Cada projeto passa por etapas de revisão antes de ir ao ar: você acompanha, opina e ajusta até ficar do jeito certo. Depois da entrega, ainda tem 30 dias de suporte para qualquer mudança significativa, sem custo extra.",
+  },
+  {
+    question: "A página funciona em celular?",
+    answer:
+      "Sim. Todas as páginas são 100% responsivas, testadas em celular, tablet e desktop. Como a maioria dos cliques vem do celular, essa é a primeira coisa que eu garanto.",
   },
   {
     question: "Preciso ter domínio e hospedagem?",
-    answer: "Para publicar a página com domínio próprio, sim. Um domínio transmite credibilidade — um endereço como 'suaclinica.com.br' converte muito mais do que um link genérico. Caso ainda não tenha, orientamos você nas melhores opções.",
+    answer:
+      "Para publicar com domínio próprio (ex: suaclinica.com.br), sim. Se você ainda não tem, eu te oriento nas melhores opções e ajudo a configurar tudo.",
   },
   {
-    question: "A integração com pixel do Meta ou Google está inclusa?",
-    answer: "A integração com pixels de rastreamento é opcional e pode ser adicionada ao pacote conforme sua necessidade.",
+    question: "R$997 é o valor final? Tem mensalidade?",
+    answer:
+      "O investimento começa em R$997 e pode variar conforme a complexidade do projeto. Sem mensalidade, sem taxa escondida. O valor é definido após a conversa inicial, quando entendo exatamente o que você precisa. Parcelo em até 3x sem juros.",
   },
 ];
 
@@ -44,61 +50,62 @@ const FAQSection = () => {
       id="faq"
       ref={ref as React.RefObject<HTMLElement>}
       className="relative py-16 px-4"
-      style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)' }}
+      style={{
+        maskImage:
+          "linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)",
+      }}
     >
       <div className="max-w-4xl mx-auto relative overflow-hidden">
-        {/* Dynamic background */}
-        {/* Dynamic background */}
-
-
         <div
-          ref={ref}
-          className={`max-w-3xl mx-auto relative z-10 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          className={`max-w-3xl mx-auto relative z-10 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
+          {/* Header */}
           <div className="text-center mb-12">
-            <p className="text-accent font-medium mb-2">Dúvidas</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Perguntas Frequentes
+              Perguntas que você provavelmente está se fazendo
             </h2>
             <p className="text-muted-foreground text-lg">
-              Respondemos o que mais aparece antes de fechar.
+              Se a resposta que você procura não está aqui, me chama no WhatsApp.
             </p>
           </div>
 
+          {/* Accordion */}
           <Accordion type="single" collapsible className="w-full space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className={`border border-border/50 rounded-xl px-6 bg-card/30 backdrop-blur-sm transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                  }`}
+                className={`border border-border/50 rounded-xl px-6 bg-card/30 backdrop-blur-sm transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <AccordionTrigger className="text-left text-foreground hover:text-accent hover:no-underline py-5">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5">
+                <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
 
+          {/* Texto pós-FAQ + CTA WhatsApp secundário */}
           <div className="text-center mt-12">
             <p className="text-muted-foreground text-sm mb-4">
-              Ainda tem dúvidas? Fala direto comigo pelo WhatsApp.
+              Ainda ficou com alguma dúvida? Sem problema: me manda uma mensagem que eu respondo pessoalmente.
             </p>
-            <div className="relative inline-block">
-              <div className="absolute -inset-2 bg-gradient-to-r from-amber-400/20 via-yellow-500/20 to-amber-600/20 rounded-xl blur-lg animate-pulse" />
-              <Button
-                className="relative gap-2 px-6 py-5 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-lg shadow-accent/20 hover:shadow-xl hover:scale-105 transition-all duration-300"
-                onClick={() => window.open("https://wa.me/5527997983112?text=Olá! Tenho uma dúvida sobre a landing page.", "_blank")}
-              >
-                <MessageCircle className="w-4 h-4" />
-                Tirar dúvida no WhatsApp
-              </Button>
-            </div>
+            <Button
+              variant="outline"
+              className="gap-2 px-6 py-5 border-accent/30 text-accent hover:bg-accent/10 hover:border-accent/50 transition-all duration-300"
+              onClick={() =>
+                window.open(
+                  "https://wa.me/5527997983112?text=Olá! Tenho uma dúvida sobre a landing page.",
+                  "_blank"
+                )
+              }
+            >
+              <MessageCircle className="w-4 h-4" />
+              Tirar dúvida no WhatsApp
+            </Button>
           </div>
         </div>
       </div>

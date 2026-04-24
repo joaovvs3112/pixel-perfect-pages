@@ -23,32 +23,32 @@ function getContent(q7: number) {
     case 0:
       return {
         title: "Quando 9 em 10 clientes vêm por indicação, seu crescimento está nas mãos de outras pessoas.",
-        body: "Indicação é o melhor canal que existe — mas não dá para programar, não escala sozinha e não é previsível. Um mês sem uma boa indicação pode impactar diretamente o seu faturamento.",
-        closing: "Uma landing page não substitui a indicação. Ela trabalha em paralelo — 24 horas por dia, sem precisar de você.",
+        body: "Indicação é o melhor canal que existe, mas não dá para programar, não escala sozinha e não é previsível. Um mês sem uma boa indicação pode impactar diretamente o seu faturamento.",
+        closing: "Uma landing page não substitui a indicação. Ela trabalha em paralelo, 24 horas por dia, sem precisar de você.",
       };
     case 1:
       return {
         title: "Você tem dois canais. Mas um carrega quase todo o peso.",
-        body: "Ter algum resultado digital é um bom sinal — mas com 70–80% vindo de indicações, você ainda está muito exposto. Se esse fluxo cair, a queda no faturamento é imediata.",
+        body: "Ter algum resultado digital é um bom sinal, mas com 70–80% vindo de indicações, você ainda está muito exposto. Se esse fluxo cair, a queda no faturamento é imediata.",
         closing: "Equilibrar os canais não é abandonar a indicação. É garantir que o digital funcione mesmo quando as indicações estão quietas.",
       };
     case 2:
       return {
         title: "50/50 parece bom. Mas significa que metade do seu crescimento ainda é imprevisível.",
-        body: "Chegar ao equilíbrio entre indicação e digital é um marco importante. O próximo passo não é aumentar tráfego — é converter melhor o que já chega pelo digital.",
+        body: "Chegar ao equilíbrio entre indicação e digital é um marco importante. O próximo passo não é aumentar tráfego: é converter melhor o que já chega pelo digital.",
         closing: "Com uma LP bem estruturada, o digital pode ultrapassar a indicação sem precisar gastar mais em anúncios.",
       };
     case 3:
       return {
         title: "Você já dominou o digital. O próximo nível é conversão.",
-        body: "Menos de 30% de dependência de indicações significa que você já tem um canal digital funcionando. O gargalo agora não é tráfego — é transformar mais visitantes em contatos e mais contatos em clientes.",
+        body: "Menos de 30% de dependência de indicações significa que você já tem um canal digital funcionando. O gargalo agora não é tráfego: é transformar mais visitantes em contatos e mais contatos em clientes.",
         closing: "Uma LP otimizada para conversão pode dobrar seus resultados sem aumentar um centavo no investimento em tráfego.",
       };
     default:
       return {
         title: "Indicação é o melhor marketing que existe. Também é o mais frágil.",
-        body: "Um negócio que depende fortemente de indicações está terceirizando seu crescimento para outros. Quando o fluxo diminui — e em algum momento sempre diminui — o impacto aparece direto no faturamento.",
-        closing: "Uma landing page não substitui a indicação. Ela trabalha em paralelo — 24 horas por dia, sem precisar de você.",
+        body: "Um negócio que depende fortemente de indicações está terceirizando seu crescimento para outros. Quando o fluxo diminui, e em algum momento sempre diminui, o impacto aparece direto no faturamento.",
+        closing: "Uma landing page não substitui a indicação. Ela trabalha em paralelo, 24 horas por dia, sem precisar de você.",
       };
   }
 }
@@ -169,15 +169,11 @@ export function InsightCard5({ onNext, animDir, q7Answer }: Props) {
       </div>
 
       <p className="text-[#8B9ABB] text-sm italic mb-8">
-        {closing.split(" — ").map((part, i, arr) => (
-          i < arr.length - 1
-            ? <span key={i}>{part} — </span>
-            : <strong key={i} className="text-white">{part}</strong>
-        ))}
+        {closing}
       </p>
 
       <button onClick={onNext} className="quiz-insight-btn">
-        Continuar
+        Boa. Qual seu maior objetivo? →
         <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
           <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         </svg>

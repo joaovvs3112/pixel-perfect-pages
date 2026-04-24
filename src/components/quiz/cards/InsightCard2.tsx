@@ -93,7 +93,7 @@ export function InsightCard2({ onNext, animDir, q2Answer }: Props) {
         </h2>
 
         <p className="text-[#8B9ABB] mb-6 leading-relaxed">
-          A maioria das páginas existe — mas foi feita sem estratégia de conversão. Headline fraca, sem prova social, botão de contato enterrado no final. O visitante entra, olha, não encontra o que precisava e sai.
+          A maioria das páginas existe, mas foi feita sem estratégia de conversão. Headline fraca, sem prova social, botão de contato enterrado no final. O visitante entra, olha, não encontra o que precisava e sai.
         </p>
 
         <div
@@ -126,7 +126,7 @@ export function InsightCard2({ onNext, animDir, q2Answer }: Props) {
 
         <p className="text-[#8B9ABB] text-sm italic mb-8">
           <WordReveal
-            text="Uma página que existe e uma que converte — a diferença está nos detalhes."
+            text="Uma página que existe e uma que converte: a diferença está nos detalhes."
             highlight={[]}
             stagger={60}
             baseDelay={600}
@@ -134,7 +134,7 @@ export function InsightCard2({ onNext, animDir, q2Answer }: Props) {
         </p>
 
         <button onClick={onNext} className="quiz-insight-btn">
-          Continuar
+          Faz sentido. Vamos ver o volume →
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
@@ -169,7 +169,7 @@ export function InsightCard2({ onNext, animDir, q2Answer }: Props) {
         </p>
 
         <button onClick={onNext} className="quiz-insight-btn">
-          Continuar
+          Faz sentido. Vamos ver o volume →
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
@@ -192,7 +192,7 @@ export function InsightCard2({ onNext, animDir, q2Answer }: Props) {
         </h2>
 
         <p className="text-[#8B9ABB] mb-6 leading-relaxed">
-          O Linktree é apenas uma ferramenta de organização — uma lista de atalhos. Ele não tira as dúvidas do lead, não expõe o seu serviço com profundidade, não apresenta depoimentos de clientes e não guia o visitante até o contato. Sem um site ou landing page, ele continua incompleto como ferramenta de vendas.
+          O Linktree é apenas uma ferramenta de organização, uma lista de atalhos. Ele não tira as dúvidas do lead, não expõe o seu serviço com profundidade, não apresenta depoimentos de clientes e não guia o visitante até o contato. Sem um site ou landing page, ele continua incompleto como ferramenta de vendas.
         </p>
 
         <div
@@ -237,7 +237,7 @@ export function InsightCard2({ onNext, animDir, q2Answer }: Props) {
         </p>
 
         <button onClick={onNext} className="quiz-insight-btn">
-          Continuar
+          Faz sentido. Vamos ver o volume →
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>

@@ -27,7 +27,7 @@ export function InsightCard1({ onNext, animDir, q1Answer }: Props) {
         </h2>
 
         <p className="text-[#8B9ABB] mb-8 leading-relaxed">
-          Quando alguém recebe uma indicação do seu serviço, a primeira coisa que faz é pesquisar seu nome antes de entrar em contato. Se o que encontra não transmite confiança, ele desiste — sem te avisar.
+          Quando alguém recebe uma indicação do seu serviço, a primeira coisa que faz é pesquisar seu nome antes de entrar em contato. Se o que encontra não transmite confiança, ele desiste, sem te avisar.
         </p>
 
         {/* Big stat */}
@@ -40,7 +40,7 @@ export function InsightCard1({ onNext, animDir, q1Answer }: Props) {
               <AnimatedCounter target={87} suffix="%" duration={1600} delay={400} />
             </div>
             <p className="text-[#8B9ABB] pb-2 text-sm leading-tight max-w-xs">
-              dos consumidores pesquisam online antes de contratar um serviço local —{" "}
+              dos consumidores pesquisam online antes de contratar um serviço local,{" "}
               <strong className="text-white">mesmo quando vieram de indicação</strong>
             </p>
           </div>
@@ -79,7 +79,7 @@ export function InsightCard1({ onNext, animDir, q1Answer }: Props) {
         </p>
 
         <button onClick={onNext} className="quiz-insight-btn">
-          Entendi — continuar
+          Entendi. E como você recebe esses clientes? →
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
@@ -97,7 +97,7 @@ export function InsightCard1({ onNext, animDir, q1Answer }: Props) {
         <div className="insight-badge">DADO DE MERCADO</div>
 
         <h2 className="text-2xl md:text-3xl font-bold text-white mt-4 mb-2 leading-snug">
-          O Instagram foi projetado para entreter — não para vender.
+          O Instagram foi projetado para entreter, não para vender.
         </h2>
 
         <p className="text-[#8B9ABB] mb-8 leading-relaxed">
@@ -114,7 +114,7 @@ export function InsightCard1({ onNext, animDir, q1Answer }: Props) {
               <AnimatedCounter target={87} suffix="%" duration={1600} delay={400} />
             </div>
             <p className="text-[#8B9ABB] pb-2 text-sm leading-tight max-w-xs">
-              dos consumidores pesquisam online antes de contratar um serviço local —{" "}
+              dos consumidores pesquisam online antes de contratar um serviço local,{" "}
               <strong className="text-white">mesmo quando vieram de indicação</strong>
             </p>
           </div>
@@ -153,7 +153,7 @@ export function InsightCard1({ onNext, animDir, q1Answer }: Props) {
         </p>
 
         <button onClick={onNext} className="quiz-insight-btn">
-          Entendi — continuar
+          Entendi. E como você recebe esses clientes? →
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
@@ -205,7 +205,7 @@ export function InsightCard1({ onNext, animDir, q1Answer }: Props) {
         </p>
 
         <button onClick={onNext} className="quiz-insight-btn">
-          Entendi — continuar
+          Entendi. E como você recebe esses clientes? →
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
@@ -226,7 +226,7 @@ export function InsightCard1({ onNext, animDir, q1Answer }: Props) {
       </h2>
 
       <p className="text-[#8B9ABB] mb-6 leading-relaxed">
-        Não saber de onde vêm os seus clientes é um sinal claro: o processo de aquisição ainda não está estruturado. Isso significa que o crescimento depende de sorte — e não de uma estratégia que você pode repetir e ampliar.
+        Não saber de onde vêm os seus clientes é um sinal claro: o processo de aquisição ainda não está estruturado. Isso significa que o crescimento depende de sorte, e não de uma estratégia que você pode repetir e ampliar.
       </p>
 
       {/* Highlight box */}
@@ -272,7 +272,7 @@ export function InsightCard1({ onNext, animDir, q1Answer }: Props) {
       </p>
 
       <button onClick={onNext} className="quiz-insight-btn">
-        Entendi — continuar
+        Entendi. E como você recebe esses clientes? →
         <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
           <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         </svg>

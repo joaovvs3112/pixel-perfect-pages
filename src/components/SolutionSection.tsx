@@ -1,61 +1,37 @@
-import { Target, Sparkles, Zap, Users, MessageCircle, X, Check } from "lucide-react";
+import { Target, Sparkles, Zap, BarChart3 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Button } from "@/components/ui/button";
+import { SectionHook } from "@/components/ui/SectionHook";
 import React from "react";
 
 const solutions = [
   {
     icon: Target,
-    title: "Feitas sob medida",
+    title: "Seu concorrente nunca vai ter a mesma página.",
     description:
-      "Estudamos o seu mercado, analisamos o que converte no seu segmento e construímos a página ao redor da sua oferta específica — não de um template copiado que qualquer concorrente já usou.",
+      "Cada projeto é construído do zero para o seu negócio específico. Estudamos seu mercado, seu cliente, suas objeções, e criamos uma página que só funciona para você.",
   },
   {
     icon: Sparkles,
-    title: "Copy que vende de verdade",
+    title: "Texto que faz o cliente mandar mensagem antes de pensar duas vezes.",
     description:
-      "Cada palavra é escrita para o seu cliente. Antecipamos as objeções antes que ele as tenha, conduzimos a leitura do início ao fim e entregamos o argumento certo no momento certo.",
+      "Cada palavra tem um propósito. Antecipamos objeções, construímos confiança, e entregamos o argumento certo no momento certo.",
   },
   {
     icon: Zap,
-    title: "Estrutura orientada a resultados",
+    title: "Sua página e seu anúncio trabalhando juntos, não um contra o outro.",
     description:
-      "Cada bloco da página tem um propósito claro: prender atenção, construir confiança, eliminar dúvidas e direcionar para o contato. Nada é colocado por acidente ou para parecer bonito.",
+      "Construímos pensando no tráfego pago desde o primeiro pixel. Isso significa que seu custo por lead cai, e seu retorno sobe.",
   },
   {
-    icon: Users,
-    title: "Integração com tráfego pago",
+    icon: BarChart3,
+    title: "Bonito é consequência. Conversão é o objetivo.",
     description:
-      "Desenvolvida com foco no Quality Score do Google e na relevância do Meta Ads. Sua landing page trabalha junto com o anúncio — e não contra ele — para reduzir o custo por lead.",
-  },
-];
-
-const comparisons = [
-  {
-    generic: "Template igual ao do seu concorrente",
-    lumen: "Design exclusivo criado para o seu negócio",
-  },
-  {
-    generic: "Texto genérico sem pesquisa de mercado",
-    lumen: "Copy escrita para o seu cliente e segmento",
-  },
-  {
-    generic: "Taxa de conversão média de 0,5–1%",
-    lumen: "Estrutura orientada a 3–8% de conversão",
-  },
-  {
-    generic: "Sem rastreamento de conversões",
-    lumen: "Compatível com pixels do Meta e Google Ads",
-  },
-  {
-    generic: "Você edita sozinho e quebra o layout",
-    lumen: "Entregue pronta, testada e no ar em 7 dias úteis",
+      "Não aceitamos \"ficou bonito mas não converte\". A estrutura toda serve a um único propósito: transformar visitante em cliente.",
   },
 ];
 
 const SolutionSection = () => {
   const { ref, isVisible } = useScrollAnimation();
-  const whatsappLink = "https://wa.me/5527997983112?text=Olá! Tenho interesse em uma landing page profissional.";
 
   return (
     <section
@@ -64,24 +40,19 @@ const SolutionSection = () => {
       style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)' }}
     >
       <div className="max-w-5xl mx-auto relative overflow-hidden">
-
         <div className="max-w-5xl mx-auto relative z-10">
 
           {/* Header */}
           <div
             className={`text-center mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            <p className="text-accent font-medium mb-2">A solução</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Landing pages que realmente funcionam
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              O que torna uma página eficiente
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Desenvolvemos páginas com foco total em transformar visitantes em contatos qualificados.
-            </p>
           </div>
 
           {/* Cards */}
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 gap-6">
             {solutions.map((solution, index) => (
               <div
                 key={index}
@@ -93,7 +64,7 @@ const SolutionSection = () => {
                     <solution.icon className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                    <h3 className="text-base font-semibold text-foreground mb-2">
                       {solution.title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">
@@ -105,78 +76,11 @@ const SolutionSection = () => {
             ))}
           </div>
 
-          {/* Comparativo Antes × Depois */}
-          <div
-            className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-          >
-            {/* Label de seção */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex-1 h-px bg-border/20" />
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/50 whitespace-nowrap">
-                Por que a diferença importa
-              </p>
-              <div className="flex-1 h-px bg-border/20" />
-            </div>
-
-            {/* Grid comparativo */}
-            <div className="rounded-xl border border-border/10 overflow-hidden">
-              {/* Header das colunas */}
-              <div className="grid grid-cols-2">
-                <div className="px-5 py-3 bg-white/[0.03] border-b border-r border-border/10">
-                  <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground/50">
-                    ❌ Página Genérica
-                  </span>
-                </div>
-                <div className="px-5 py-3 bg-accent/5 border-b border-border/10">
-                  <span className="text-xs font-bold uppercase tracking-widest text-accent/80">
-                    ✅ Lumen Pages
-                  </span>
-                </div>
-              </div>
-
-              {/* Linhas */}
-              {comparisons.map((row, index) => (
-                <div
-                  key={index}
-                  className={`grid grid-cols-2 transition-all duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'} ${index < comparisons.length - 1 ? 'border-b border-border/10' : ''}`}
-                  style={{ transitionDelay: `${(index + 4) * 80}ms` }}
-                >
-                  <div className="flex items-center gap-3 px-5 py-4 border-r border-border/10 bg-white/[0.02]">
-                    <X className="w-3.5 h-3.5 text-destructive/60 shrink-0" />
-                    <span className="text-sm text-muted-foreground/60 leading-snug">{row.generic}</span>
-                  </div>
-                  <div className="flex items-center gap-3 px-5 py-4 bg-accent/[0.03]">
-                    <Check className="w-3.5 h-3.5 text-accent shrink-0" />
-                    <span className="text-sm text-foreground/90 font-medium leading-snug">{row.lumen}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div
-            className={`text-center mt-12 transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-          >
-            <div className="relative inline-block">
-              <div className="absolute -inset-2 bg-gradient-to-r from-amber-400/20 via-yellow-500/20 to-amber-600/20 rounded-xl blur-lg animate-pulse" />
-              <Button
-                className="relative gap-2 px-8 py-5 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-lg shadow-accent/20 hover:shadow-xl hover:scale-105 transition-all duration-300"
-                asChild
-              >
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-4 h-4" />
-                  Quero uma página assim
-                </a>
-              </Button>
-            </div>
-            <p className="text-xs text-muted-foreground/40 mt-3">
-              Sem compromisso · Resposta em até 2h
-            </p>
-          </div>
-
         </div>
       </div>
+
+      {/* Hook de transição */}
+      <SectionHook text="Veja isso funcionando na prática" />
     </section>
   );
 };

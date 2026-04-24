@@ -133,7 +133,7 @@ export function LeadCaptureCard({ onNext, animDir }: Props) {
         }}
       >
         Vou te enviar o diagnóstico completo e as recomendações personalizadas
-        para o seu negócio — direto no WhatsApp e no e-mail. Sem spam, sem
+        para o seu negócio, direto no WhatsApp e no e-mail. Sem spam, sem
         vendas chatas. Só o que é relevante para o seu caso.
       </p>
 

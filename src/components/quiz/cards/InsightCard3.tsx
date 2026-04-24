@@ -31,7 +31,7 @@ function getHeadline(q4: number): { title: string; subtitle: string } {
     case 0:
       return {
         title: "Você está 100% dependente de indicações.",
-        subtitle: "Zero contatos pelo digital significa que toda a sua receita depende de outras pessoas te recomendando. Uma landing page muda isso — ela trabalha para você 24h por dia, mesmo quando você está dormindo.",
+        subtitle: "Zero contatos pelo digital significa que toda a sua receita depende de outras pessoas te recomendando. Uma landing page muda isso: ela trabalha para você 24h por dia, mesmo quando você está dormindo.",
       };
     case 1:
       return {
@@ -41,12 +41,12 @@ function getHeadline(q4: number): { title: string; subtitle: string } {
     case 2:
       return {
         title: "Você converte mais, sem gastar 1 centavo a mais em tráfego.",
-        subtitle: "Com 4 a 10 contatos por semana você já tem volume. O próximo passo não é mais anúncio — é converter melhor os que já chegam. Uma LP bem estruturada faz exatamente isso.",
+        subtitle: "Com 4 a 10 contatos por semana você já tem volume. O próximo passo não é mais anúncio: é converter melhor os que já chegam. Uma LP bem estruturada faz exatamente isso.",
       };
     case 3:
       return {
         title: "Você já tem volume. O gargalo agora é conversão.",
-        subtitle: "Com mais de 10 contatos por semana, o problema não é mais conseguir leads — é fechar mais deles. Uma landing page otimizada eleva sua taxa de fechamento sem aumentar o custo de aquisição.",
+        subtitle: "Com mais de 10 contatos por semana, o problema não é mais conseguir leads: é fechar mais deles. Uma landing page otimizada eleva sua taxa de fechamento sem aumentar o custo de aquisição.",
       };
     default:
       return {
@@ -76,7 +76,7 @@ export function InsightCard3({ onNext, animDir, q4Answer, onSelectTicket }: Prop
     ? Math.round(weeklyContacts * 4 * closingRate * ticket.mid)
     : 0;
   const potentialMonthly = ticket
-    ? Math.round(currentMonthly * 3.2) || Math.round(6 * 4 * closingRate * ticket.mid)
+    ? Math.round(currentMonthly * 2) || Math.round(6 * 4 * closingRate * ticket.mid)
     : 0;
   const opportunity = potentialMonthly - currentMonthly;
 
@@ -153,8 +153,8 @@ export function InsightCard3({ onNext, animDir, q4Answer, onSelectTicket }: Prop
               <p className="text-xs text-amber-400/70 uppercase tracking-wider mb-3">Com Landing Page</p>
               <div className="flex flex-col gap-2 text-sm text-[#8B9ABB] mb-4">
                 <span>
-                  {Math.round(weeklyContacts * 3.2) || 6} contatos/semana{" "}
-                  <span className="text-green-400">↑ 3,2×</span>
+                  {Math.round(weeklyContacts * 2) || 6} contatos/semana{" "}
+                  <span className="text-green-400">↑ estimativa</span>
                 </span>
                 <span>× 25% de fechamento</span>
                 <span>× {ticket.label} ticket médio</span>
@@ -182,7 +182,7 @@ export function InsightCard3({ onNext, animDir, q4Answer, onSelectTicket }: Prop
                 <AnimatedCounter target={opportunity} duration={1400} delay={600} />{" "}
                 por mês
               </strong>{" "}
-              em oportunidade que hoje está indo para outro negócio —
+              em oportunidade que hoje está indo para outro negócio,
               sem que você perceba.
             </p>
           </div>
@@ -198,7 +198,7 @@ export function InsightCard3({ onNext, animDir, q4Answer, onSelectTicket }: Prop
         disabled={selectedTicket === null}
         className={`quiz-insight-btn ${selectedTicket === null ? "opacity-40 cursor-not-allowed" : ""}`}
       >
-        {selectedTicket === null ? "Selecione seu ticket para continuar" : "Continuar"}
+        {selectedTicket === null ? "Selecione seu ticket para continuar" : "Agora vamos falar de tráfego pago →"}
         {selectedTicket !== null && (
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />

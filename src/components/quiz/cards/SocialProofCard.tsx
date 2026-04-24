@@ -17,7 +17,7 @@ export function SocialProofCard({ onNext, animDir }: Props) {
       </h2>
 
       <p className="text-[#8B9ABB] mb-6 leading-relaxed">
-        O Dr. Atyla Neto precisava de pacientes — não de seguidores. A estrutura
+        O Dr. Atyla Neto precisava de pacientes, não de seguidores. A estrutura
         entregou exatamente isso: autoridade construída na página, agenda construída
         na realidade.
       </p>
@@ -45,7 +45,7 @@ export function SocialProofCard({ onNext, animDir }: Props) {
           </div>
           <div>
             <p className="text-white font-semibold">Dr. Atyla Neto</p>
-            <p className="text-[#8B9ABB] text-sm">Ortopedista — Vila Velha, ES</p>
+            <p className="text-[#8B9ABB] text-sm">Ortopedista · Vila Velha, ES</p>
           </div>
         </div>
 
@@ -55,7 +55,7 @@ export function SocialProofCard({ onNext, animDir }: Props) {
           <div>
             <span className="text-green-400 text-sm font-medium">Acima de 20% de conversão no botão de CTA</span>
             <p className="text-[#6B7A99] text-xs mt-0.5">
-              Enquanto o restante do segmento briga para chegar a 10% — num dos mercados mais competitivos do país.
+              Enquanto o restante do segmento briga para chegar a 10%, num dos mercados mais competitivos do país.
             </p>
           </div>
         </div>
@@ -76,7 +76,7 @@ export function SocialProofCard({ onNext, animDir }: Props) {
         </p>
         <p className="text-sm text-[#8B9ABB] leading-relaxed">
           A maioria dos concorrentes do seu mercado ainda usa Instagram como única
-          presença digital — ou tem um site desatualizado sem estratégia de conversão.
+          presença digital, ou tem um site desatualizado sem estratégia de conversão.
           Com a Lumen Pages, você chega ao ar em 7 dias úteis com uma página que já supera
           tecnicamente{" "}
           <strong className="text-white">90% do que existe no seu nicho.</strong>

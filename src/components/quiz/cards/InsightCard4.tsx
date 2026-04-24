@@ -101,7 +101,7 @@ export function InsightCard4({ onNext, animDir, q5Answer }: Props) {
         </div>
 
         <button onClick={onNext} className="quiz-insight-btn">
-          Continuar
+          Entendi. E quando o lead chega, o que acontece? →
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
@@ -144,7 +144,7 @@ export function InsightCard4({ onNext, animDir, q5Answer }: Props) {
         </div>
 
         <button onClick={onNext} className="quiz-insight-btn">
-          Continuar
+          Entendi. E quando o lead chega, o que acontece? →
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
@@ -209,7 +209,7 @@ export function InsightCard4({ onNext, animDir, q5Answer }: Props) {
         </div>
 
         <button onClick={onNext} className="quiz-insight-btn">
-          Continuar
+          Entendi. E quando o lead chega, o que acontece? →
           <svg className="ml-2 w-4 h-4" viewBox="0 0 16 16" fill="none">
             <path d="M6 12l4-4-4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
