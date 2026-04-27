@@ -2,7 +2,6 @@ import { Calendar } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { SectionHook } from "@/components/ui/SectionHook";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import React from "react";
 import bioLumen from "@/assets/bio-lumen.jpeg";
 
@@ -71,10 +70,10 @@ const AboutSection = () => {
                     className="gap-2 px-6 py-5 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-lg shadow-accent/20 hover:shadow-xl hover:scale-105 transition-all duration-300"
                     asChild
                   >
-                    <Link to="/agendar">
+                    <a href="#cta">
                       <Calendar className="w-4 h-4" />
                       Vamos conversar sobre seu projeto
-                    </Link>
+                    </a>
                   </Button>
                 </div>
               </div>

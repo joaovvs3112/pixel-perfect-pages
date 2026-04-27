@@ -2,7 +2,6 @@ import { Check, ShieldCheck, Calendar, TrendingUp } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { SectionHook } from "@/components/ui/SectionHook";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 import React from "react";
 
 const includedItems = [
@@ -137,10 +136,10 @@ const IncludedSection = () => {
                     className="relative w-full gap-2 py-6 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base shadow-lg shadow-accent/20 hover:shadow-xl hover:scale-105 transition-all duration-300"
                     asChild
                   >
-                    <Link to="/agendar">
+                    <a href="#cta">
                       <Calendar className="w-5 h-5" />
                       Quero meu site agora
-                    </Link>
+                    </a>
                   </Button>
                 </div>
               </div>

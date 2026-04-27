@@ -3,7 +3,6 @@ import { ChevronLeft, ChevronRight, Calendar } from "lucide-react";
 import { SectionHook } from "@/components/ui/SectionHook";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Link } from "react-router-dom";
 
 import portfolioAtylaneto from "@/assets/ref-atylaneto.jpeg";
 import portfolioSorrir from "@/assets/ref-sorrir.jpeg";
@@ -259,10 +258,10 @@ const PortfolioSection = () => {
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-base font-bold shadow-lg shadow-accent/20 hover:shadow-xl hover:scale-105 transition-all duration-300 gap-2"
               asChild
             >
-              <Link to="/agendar">
+              <a href="#cta">
                 <Calendar className="w-5 h-5" />
                 Quero uma página nesse nível
-              </Link>
+              </a>
             </Button>
           </div>
 

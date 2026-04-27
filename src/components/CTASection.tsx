@@ -11,6 +11,7 @@ const CTASection = () => {
 
   return (
     <section
+      id="cta"
       ref={ref as React.RefObject<HTMLElement>}
       className="relative py-24 px-4 overflow-hidden flex items-center justify-center min-h-[70vh]"
       style={{

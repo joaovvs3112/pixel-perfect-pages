@@ -3,7 +3,6 @@ import { Stethoscope, Building, TrendingUp, XCircle, Calendar } from "lucide-rea
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { SectionHook } from "@/components/ui/SectionHook";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const audiences = [
   {
@@ -112,10 +111,10 @@ const ForWhoSection = () => {
               className="gap-2 px-8 py-5 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-lg shadow-accent/20 hover:shadow-xl hover:scale-105 transition-all duration-300"
               asChild
             >
-              <Link to="/agendar">
+              <a href="#cta">
                 <Calendar className="w-4 h-4" />
                 Quero uma landing page profissional
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
