@@ -297,7 +297,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Autobahn Estética Auto",
     segment: "Estética Automotiva",
     url: "autobahnesteticaauto.netlify.app",
-    image: "",
+    image: "/src/assets/ref-autobahn.jpeg",
     isReal: true,
   },
 ];

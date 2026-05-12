@@ -9,6 +9,7 @@ import portfolioSorrir from "@/assets/ref-sorrir.jpeg";
 import portfolioAlves from "@/assets/ref-alvesadvocacia.jpeg";
 import portfolioVertex from "@/assets/ref-vertex.jpeg";
 import portfolioArco from "@/assets/ref-arco.jpeg";
+import portfolioAutobahn from "@/assets/ref-autobahn.jpeg";
 
 const portfolioItems = [
   {
@@ -55,6 +56,15 @@ const portfolioItems = [
     url: "arcoarquiteturavix.netlify.app",
     fullUrl: "https://arcoarquiteturavix.netlify.app/",
     tag: "Arquitetura",
+  },
+  {
+    id: 6,
+    title: "Autobahn Estética Auto",
+    description: "Página que transmite profissionalismo e cuidado, convertendo visitantes em clientes que confiam o carro à oficina antes mesmo de ligar.",
+    image: portfolioAutobahn,
+    url: "autobahnesteticaauto.netlify.app",
+    fullUrl: "https://autobahnesteticaauto.netlify.app/",
+    tag: "Estética Automotiva",
   },
 ];
 
