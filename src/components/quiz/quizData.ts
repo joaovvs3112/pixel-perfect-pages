@@ -276,7 +276,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Alves Associados",
     segment: "Advocacia",
     url: "alvesassociados.netlify.app",
-    image: "/src/assets/portfolio-alves-associados.png",
+    image: "/src/assets/ref-alvesadvocacia.jpeg",
     isReal: false,
   },
   {

@@ -6,7 +6,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 import portfolioAtylaneto from "@/assets/ref-atylaneto.jpeg";
 import portfolioSorrir from "@/assets/ref-sorrir.jpeg";
-import portfolioAlves from "@/assets/portfolio-alves-associados.png";
+import portfolioAlves from "@/assets/ref-alvesadvocacia.jpeg";
 import portfolioVertex from "@/assets/ref-vertex.jpeg";
 import portfolioArco from "@/assets/ref-arco.jpeg";
 
