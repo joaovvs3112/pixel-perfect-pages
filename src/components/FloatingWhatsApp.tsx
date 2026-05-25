@@ -1,8 +1,8 @@
 import { MessageCircle } from "lucide-react";
 
 const FloatingWhatsApp = () => {
-  const whatsappNumber = "5511999999999";
-  const message = "Olá! Gostaria de saber mais sobre as landing pages.";
+  const whatsappNumber = "5527997983112";
+  const message = "Olá! Vi o site da Lumen Pages e quero entender como funciona.";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
   return (

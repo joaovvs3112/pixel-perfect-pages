@@ -137,7 +137,14 @@ export function LeadCaptureCard({ onNext, animDir }: Props) {
         vendas chatas. Só o que é relevante para o seu caso.
       </p>
 
-      <form onSubmit={handleSubmit} noValidate>
+      <form
+        name="quiz-leads"
+        data-netlify="true"
+        onSubmit={handleSubmit}
+        noValidate
+      >
+        {/* Hidden input exigido pelo Netlify para submissões AJAX */}
+        <input type="hidden" name="form-name" value="quiz-leads" />
         {/* Name */}
         <div style={{ marginBottom: 18 }}>
           <label style={labelStyle}>Seu nome</label>
